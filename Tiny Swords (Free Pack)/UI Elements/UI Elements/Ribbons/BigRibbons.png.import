@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs5qhsvxeg10k"
-path="res://.godot/imported/BigRibbons.png-1e090c71fefc5b586b713028991d3ff1.ctex"
+path="res://.godot/imported/BigRibbons.png-233751930cf4ca1a90a23938ef94462e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png"
-dest_files=["res://.godot/imported/BigRibbons.png-1e090c71fefc5b586b713028991d3ff1.ctex"]
+source_file="res://Tiny Swords (Free Pack)/UI Elements/UI Elements/Ribbons/BigRibbons.png"
+dest_files=["res://.godot/imported/BigRibbons.png-233751930cf4ca1a90a23938ef94462e.ctex"]
 
 [params]
 

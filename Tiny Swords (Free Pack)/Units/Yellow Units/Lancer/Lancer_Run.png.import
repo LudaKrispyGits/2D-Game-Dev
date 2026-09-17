@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beiiys2y0xky1"
-path="res://.godot/imported/Lancer_Run.png-256227890481945b3e61b4af25d7486d.ctex"
+path="res://.godot/imported/Lancer_Run.png-bf38545a9d2ed473b32884e8ccf09910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Units/Yellow Units/Lancer/Lancer_Run.png"
-dest_files=["res://.godot/imported/Lancer_Run.png-256227890481945b3e61b4af25d7486d.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Units/Yellow Units/Lancer/Lancer_Run.png"
+dest_files=["res://.godot/imported/Lancer_Run.png-bf38545a9d2ed473b32884e8ccf09910.ctex"]
 
 [params]
 

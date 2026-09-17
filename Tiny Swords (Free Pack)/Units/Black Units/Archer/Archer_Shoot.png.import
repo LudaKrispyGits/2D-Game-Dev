@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmrmulk14m4jx"
-path="res://.godot/imported/Archer_Shoot.png-a559858e76d7a4b41b35c129f7c9946d.ctex"
+path="res://.godot/imported/Archer_Shoot.png-8a52da84e85e59dac763f0977c601576.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Units/Black Units/Archer/Archer_Shoot.png"
-dest_files=["res://.godot/imported/Archer_Shoot.png-a559858e76d7a4b41b35c129f7c9946d.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Units/Black Units/Archer/Archer_Shoot.png"
+dest_files=["res://.godot/imported/Archer_Shoot.png-8a52da84e85e59dac763f0977c601576.ctex"]
 
 [params]
 

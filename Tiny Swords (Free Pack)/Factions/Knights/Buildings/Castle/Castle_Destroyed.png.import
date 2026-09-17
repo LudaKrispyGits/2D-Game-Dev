@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ct2wgktk5rbug"
-path="res://.godot/imported/Castle_Destroyed.png-5673308175f381e8e3b386fbcffd9108.ctex"
+path="res://.godot/imported/Castle_Destroyed.png-df6a9f92e9c45884a769d96e715ad068.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Factions/Knights/Buildings/Castle/Castle_Destroyed.png"
-dest_files=["res://.godot/imported/Castle_Destroyed.png-5673308175f381e8e3b386fbcffd9108.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Factions/Knights/Buildings/Castle/Castle_Destroyed.png"
+dest_files=["res://.godot/imported/Castle_Destroyed.png-df6a9f92e9c45884a769d96e715ad068.ctex"]
 
 [params]
 

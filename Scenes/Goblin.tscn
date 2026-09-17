@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://drjhxvi3euxri"]
+
+[ext_resource type="Texture2D" uid="uid://bppkdp70d6u1x" path="res://Tiny Swords (Free Pack)/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_564fj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqigr"]
+atlas = ExtResource("1_564fj")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_128dr"]
+atlas = ExtResource("1_564fj")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjpl2"]
+atlas = ExtResource("1_564fj")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02kj1"]
+atlas = ExtResource("1_564fj")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0stx"]
+atlas = ExtResource("1_564fj")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_428mb"]
+atlas = ExtResource("1_564fj")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8wau"]
+atlas = ExtResource("1_564fj")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_564fj"]
+atlas = ExtResource("1_564fj")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxja1"]
+atlas = ExtResource("1_564fj")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16yau"]
+atlas = ExtResource("1_564fj")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr43s"]
+atlas = ExtResource("1_564fj")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m62qr"]
+atlas = ExtResource("1_564fj")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y84u7"]
+atlas = ExtResource("1_564fj")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxja1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqigr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_128dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjpl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02kj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0stx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_428mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8wau")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_564fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxja1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16yau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr43s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m62qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y84u7")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 7.0
+}]
+
+[node name="Enemy" type="Node2D" unique_id=101765560]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439150386]
+scale = Vector2(0.7708333, 0.7708333)
+sprite_frames = SubResource("SpriteFrames_xxja1")
+animation = &"Run"
+autoplay = "Run"
+frame_progress = 0.7239792

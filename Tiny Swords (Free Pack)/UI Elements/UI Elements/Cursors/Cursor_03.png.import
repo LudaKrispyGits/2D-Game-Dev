@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://osev21kwkp4"
-path="res://.godot/imported/Cursor_03.png-a22bb90f78f9f4e4594083e8f148028f.ctex"
+path="res://.godot/imported/Cursor_03.png-1809cd3c9f982fed4cc1f67e06af0783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/UI Elements/UI Elements/Cursors/Cursor_03.png"
-dest_files=["res://.godot/imported/Cursor_03.png-a22bb90f78f9f4e4594083e8f148028f.ctex"]
+source_file="res://Tiny Swords (Free Pack)/UI Elements/UI Elements/Cursors/Cursor_03.png"
+dest_files=["res://.godot/imported/Cursor_03.png-1809cd3c9f982fed4cc1f67e06af0783.ctex"]
 
 [params]
 

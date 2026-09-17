@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbocesd0h52q8"
-path="res://.godot/imported/Archer_Purple_(NoArms).png-6553e98b981981ca34e7464085d1d5a5.ctex"
+path="res://.godot/imported/Archer_Purple_(NoArms).png-3b147114f10a19a383d03c0731112f7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Purple_(NoArms).png"
-dest_files=["res://.godot/imported/Archer_Purple_(NoArms).png-6553e98b981981ca34e7464085d1d5a5.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Purple_(NoArms).png"
+dest_files=["res://.godot/imported/Archer_Purple_(NoArms).png-3b147114f10a19a383d03c0731112f7f.ctex"]
 
 [params]
 

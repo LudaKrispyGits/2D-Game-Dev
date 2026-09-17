@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxm2hrmkkyqn6"
-path="res://.godot/imported/Dust_02.png-77d3b1829c1ea21de827c5a462a53260.ctex"
+path="res://.godot/imported/Dust_02.png-f4901de7c56500ed9debc72a40a633dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Particle FX/Dust_02.png"
-dest_files=["res://.godot/imported/Dust_02.png-77d3b1829c1ea21de827c5a462a53260.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Particle FX/Dust_02.png"
+dest_files=["res://.godot/imported/Dust_02.png-f4901de7c56500ed9debc72a40a633dc.ctex"]
 
 [params]
 

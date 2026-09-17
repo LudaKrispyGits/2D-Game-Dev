@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpi7k4dmgoih1"
-path="res://.godot/imported/Water Background color.png-51d33323b10eb39fc5d27e68563277d9.ctex"
+path="res://.godot/imported/Water Background color.png-71f6ae769499a7aee43d2ac7208839ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Terrain/Tileset/Water Background color.png"
-dest_files=["res://.godot/imported/Water Background color.png-51d33323b10eb39fc5d27e68563277d9.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Terrain/Tileset/Water Background color.png"
+dest_files=["res://.godot/imported/Water Background color.png-71f6ae769499a7aee43d2ac7208839ea.ctex"]
 
 [params]
 

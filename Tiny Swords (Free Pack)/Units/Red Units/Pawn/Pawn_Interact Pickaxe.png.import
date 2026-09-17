@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ocl283xk550y"
-path="res://.godot/imported/Pawn_Interact Pickaxe.png-8c69008ca71a2786ccd9fab8a4d5beb6.ctex"
+path="res://.godot/imported/Pawn_Interact Pickaxe.png-d1db40d4a74d7a7906784c243ba682ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Units/Red Units/Pawn/Pawn_Interact Pickaxe.png"
-dest_files=["res://.godot/imported/Pawn_Interact Pickaxe.png-8c69008ca71a2786ccd9fab8a4d5beb6.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Units/Red Units/Pawn/Pawn_Interact Pickaxe.png"
+dest_files=["res://.godot/imported/Pawn_Interact Pickaxe.png-d1db40d4a74d7a7906784c243ba682ce.ctex"]
 
 [params]
 

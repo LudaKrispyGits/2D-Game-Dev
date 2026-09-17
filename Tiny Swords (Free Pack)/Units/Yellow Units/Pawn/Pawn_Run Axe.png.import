@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4fsp8p02nfbq"
-path="res://.godot/imported/Pawn_Run Axe.png-247b5c32e2e55a0d0d346ee037b7d148.ctex"
+path="res://.godot/imported/Pawn_Run Axe.png-82e87977d096823c1139ae9d29e98bda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Units/Yellow Units/Pawn/Pawn_Run Axe.png"
-dest_files=["res://.godot/imported/Pawn_Run Axe.png-247b5c32e2e55a0d0d346ee037b7d148.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Units/Yellow Units/Pawn/Pawn_Run Axe.png"
+dest_files=["res://.godot/imported/Pawn_Run Axe.png-82e87977d096823c1139ae9d29e98bda.ctex"]
 
 [params]
 

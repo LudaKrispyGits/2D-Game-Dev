@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvd8u42tkhcg6"
-path="res://.godot/imported/Icon_04.png-c758778196480d95a8115b826a34ed5a.ctex"
+path="res://.godot/imported/Icon_04.png-955a8ff8c9801228c89aa3259a8ddc79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_04.png"
-dest_files=["res://.godot/imported/Icon_04.png-c758778196480d95a8115b826a34ed5a.ctex"]
+source_file="res://Tiny Swords (Free Pack)/UI Elements/UI Elements/Icons/Icon_04.png"
+dest_files=["res://.godot/imported/Icon_04.png-955a8ff8c9801228c89aa3259a8ddc79.ctex"]
 
 [params]
 

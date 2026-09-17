@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kjs74gvo8rg6"
-path="res://.godot/imported/Pawn_Run Knife.png-bd5f499d6287040ae75c56f0c9320532.ctex"
+path="res://.godot/imported/Pawn_Run Knife.png-2d0877e63202ff4dec4757afeef93861.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Units/Black Units/Pawn/Pawn_Run Knife.png"
-dest_files=["res://.godot/imported/Pawn_Run Knife.png-bd5f499d6287040ae75c56f0c9320532.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Units/Black Units/Pawn/Pawn_Run Knife.png"
+dest_files=["res://.godot/imported/Pawn_Run Knife.png-2d0877e63202ff4dec4757afeef93861.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://citfcob61hkom"
-path="res://.godot/imported/Warrior_Guard.png-e2a286ef2cc4831746294c85c4b6e2da.ctex"
+path="res://.godot/imported/Warrior_Guard.png-8399d309e1100bc6c66e7b347176c3c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Units/Purple Units/Warrior/Warrior_Guard.png"
-dest_files=["res://.godot/imported/Warrior_Guard.png-e2a286ef2cc4831746294c85c4b6e2da.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Units/Purple Units/Warrior/Warrior_Guard.png"
+dest_files=["res://.godot/imported/Warrior_Guard.png-8399d309e1100bc6c66e7b347176c3c9.ctex"]
 
 [params]
 

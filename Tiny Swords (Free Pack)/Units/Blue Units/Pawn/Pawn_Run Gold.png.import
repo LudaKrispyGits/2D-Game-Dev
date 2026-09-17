@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3iht6vry2jov"
-path="res://.godot/imported/Pawn_Run Gold.png-7984609a39b9af40bf7edb58ef07b197.ctex"
+path="res://.godot/imported/Pawn_Run Gold.png-ff40c47092eccc006467e18d63e2d295.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Game Dev/Tiny Swords (Free Pack)/Units/Blue Units/Pawn/Pawn_Run Gold.png"
-dest_files=["res://.godot/imported/Pawn_Run Gold.png-7984609a39b9af40bf7edb58ef07b197.ctex"]
+source_file="res://Tiny Swords (Free Pack)/Units/Blue Units/Pawn/Pawn_Run Gold.png"
+dest_files=["res://.godot/imported/Pawn_Run Gold.png-ff40c47092eccc006467e18d63e2d295.ctex"]
 
 [params]
 
