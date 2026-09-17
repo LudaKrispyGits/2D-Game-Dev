@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://d2u0wr4wruoax"]
+
+[ext_resource type="Texture2D" uid="uid://dlxaj7a5helsf" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones/Gold Stone 1_Highlight.png" id="1_dlooy"]
+[ext_resource type="Script" uid="uid://c2r5a8vukrnxk" path="res://Scripts/gold_small.gd" id="1_wh1iq"]
+[ext_resource type="Texture2D" uid="uid://wtkhni74nxf3" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Stones/Gold Stone 3_Highlight.png" id="2_0iglr"]
+[ext_resource type="PackedScene" uid="uid://bibbsig07s5pb" path="res://Scenes/Resoures/Gold_Drop.tscn" id="2_ykgnj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh1iq"]
+atlas = ExtResource("1_dlooy")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykgnj"]
+atlas = ExtResource("1_dlooy")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io5q3"]
+atlas = ExtResource("1_dlooy")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etn6x"]
+atlas = ExtResource("1_dlooy")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm7x0"]
+atlas = ExtResource("1_dlooy")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t6bw"]
+atlas = ExtResource("1_dlooy")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35b6e"]
+atlas = ExtResource("2_0iglr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_strd5"]
+atlas = ExtResource("2_0iglr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyd00"]
+atlas = ExtResource("2_0iglr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tthq"]
+atlas = ExtResource("2_0iglr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6nls"]
+atlas = ExtResource("2_0iglr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgryc"]
+atlas = ExtResource("2_0iglr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh1iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykgnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io5q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etn6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm7x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t6bw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35b6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_strd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyd00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tthq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6nls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgryc")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 23.0
+
+[node name="Gold" type="StaticBody2D" unique_id=897547228]
+y_sort_enabled = true
+script = ExtResource("1_wh1iq")
+gold_pickup_scene = ExtResource("2_ykgnj")
+spawn_interval = 2.0
+spawn_radius = 60.0
+tween_duration = 0.7
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1175376437]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.2326166
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1757522129]
+position = Vector2(-1, -3)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=1862237292]

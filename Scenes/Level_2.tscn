@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://baf0pd70vyr5o" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree1.png" id="12_rq6k0"]
 [ext_resource type="Texture2D" uid="uid://dbx05forplj4e" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree2.png" id="13_0ouaf"]
 [ext_resource type="Texture2D" uid="uid://c20ebdgfv1xsx" path="res://Tiny Swords (Free Pack)/Terrain/Decorations/Rubber Duck/Rubber duck.png" id="14_xd5wc"]
-[ext_resource type="PackedScene" uid="uid://drjhxvi3euxri" path="res://Scenes/Goblin.tscn" id="15_57dsp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rj586"]
 texture = ExtResource("1_7qdet")
@@ -550,6 +549,3 @@ modulate = Color(0.66919714, 0.63752687, 0.6177079, 1)
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAIABoAAgAAAAAAAAAjABgABwAAAAAAAAAvAAwAAAAAAAAAAAAoAA0AAAAAAAAAAAAeAAkAAAAAAAAAAAAeAP7/AAAAAAAAAAAXAAYAAAAAAAAAAAABAAUAAAAAAAAAAAABAAoAAAAAAAAAAAAuAAUAAAAAAAAAAABBAA0AAAAAAAAAAABJAAIAAAAAAAAAAABMAP7/AAAAAAAAAABVAAsAAAAAAAAAAABNAAgAAAAAAAAAAABYAAYAAAAAAAAAAABAAAwABAAAAAAAAAA1AAkABAAAAAAAAAAwAAkABAAAAAAAAAAjAAIABAAAAAAAAAAFAAwABAAAAAAAAAAEAA0ABAAAAAAAAAAKAAIABAAAAAAAAAALAAMABAAAAAAAAAAVAA8ABAAAAAAAAAAAAAMABQAAAAAAAAD+/wMABQAAAAAAAABPAPz/BQAAAAAAAABUAAcABQAAAAAAAAAAAAcABQAAAAAAAAD+/wgABQAAAAAAAAD//wUABQAAAAAAAAA=")
 tile_set = SubResource("TileSet_cdqv8")
-
-[node name="Node2D" parent="." unique_id=101765560 instance=ExtResource("15_57dsp")]
-position = Vector2(540, 188)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://t3pvrrc0361e"]
+
+[ext_resource type="Script" uid="uid://kqlyu780iujk" path="res://Scripts/wood_drop.gd" id="1_10dbf"]
+[ext_resource type="Texture2D" uid="uid://d8jh70ji5v3w" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource/Wood Resource.png" id="1_377tw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 24.186773
+
+[node name="Node2D" type="Area2D" unique_id=1363000235]
+scale = Vector2(0.655, 0.655)
+script = ExtResource("1_10dbf")
+
+[node name="WoodResource" type="Sprite2D" parent="." unique_id=642774047]
+texture = ExtResource("1_377tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=445848170]
+shape = SubResource("CircleShape2D_g4v7s")

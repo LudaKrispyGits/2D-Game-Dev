@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://duf43pgsb8y3c"]
+
+[ext_resource type="Script" uid="uid://c60fd41mc3eyc" path="res://Scripts/tree.gd" id="1_ko8xy"]
+[ext_resource type="PackedScene" uid="uid://t3pvrrc0361e" path="res://Scenes/Wood_Drop.tscn" id="2_7db18"]
+[ext_resource type="Texture2D" uid="uid://dbx05forplj4e" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree2.png" id="3_k47ny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itkj8"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(0, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0suky"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(192, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e63j"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(384, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb0yx"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(576, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtd5e"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(768, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s7xt"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(960, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq7cu"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(1152, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4j1i"]
+atlas = ExtResource("3_k47ny")
+region = Rect2(1344, 0, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itkj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0suky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e63j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb0yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtd5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s7xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq7cu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4j1i")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgg5g"]
+size = Vector2(31, 42)
+
+[node name="Tree" type="StaticBody2D" unique_id=624807137]
+y_sort_enabled = true
+script = ExtResource("1_ko8xy")
+wood_pickup_scene = ExtResource("2_7db18")
+spawn_radius = 20.0
+min_spawn_radius = 40.0
+tween_duration = 0.63
+
+[node name="AnimatableBody2D" type="AnimatedSprite2D" parent="." unique_id=1764928312]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.075450845
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1705773683]
+position = Vector2(-1.5, 87)
+shape = SubResource("RectangleShape2D_vgg5g")
+
+[node name="Timer" type="Timer" parent="." unique_id=452769522]
