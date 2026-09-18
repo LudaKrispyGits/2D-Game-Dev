@@ -8,6 +8,8 @@ radius = 24.186773
 
 [node name="Node2D" type="Area2D" unique_id=1363000235]
 scale = Vector2(0.655, 0.655)
+collision_layer = 0
+collision_mask = 21
 script = ExtResource("1_10dbf")
 
 [node name="WoodResource" type="Sprite2D" parent="." unique_id=642774047]

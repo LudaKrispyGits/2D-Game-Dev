@@ -57,6 +57,9 @@ animations = [{
 radius = 14.142136
 
 [node name="Area2d" type="Area2D" unique_id=947607131]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 21
 script = ExtResource("1_0yvi7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=960752142]

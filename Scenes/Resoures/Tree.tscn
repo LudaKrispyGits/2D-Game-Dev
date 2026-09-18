@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://duf43pgsb8y3c"]
 
 [ext_resource type="Script" uid="uid://c60fd41mc3eyc" path="res://Scripts/tree.gd" id="1_ko8xy"]
-[ext_resource type="PackedScene" uid="uid://t3pvrrc0361e" path="res://Scenes/Wood_Drop.tscn" id="2_7db18"]
+[ext_resource type="PackedScene" uid="uid://t3pvrrc0361e" path="res://Scenes/Resoures/Wood_Drop.tscn" id="2_7db18"]
 [ext_resource type="Texture2D" uid="uid://dbx05forplj4e" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree2.png" id="3_k47ny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itkj8"]

@@ -9,6 +9,7 @@ extends StaticBody2D
 @onready var spawn_timer: Timer = $Timer
 
 func _ready() -> void:
+	print("GoldRock ready() called")
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.one_shot = false
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)

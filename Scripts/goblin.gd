@@ -1,16 +1,16 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 120.0
-@export var follow_offset: Vector2 = Vector2(0, 30)   
-@export var follow_deadzone: float = 10.0
-@export var attack_range: float = 40.0
-@export var attack_cooldown: float = 1.2
-@export var strength: int = 5             # damage modifier
-@export var max_health: int = 50
+@export var speed: float = 100
+@export var health: float = 10
+@export var strength: float = 1
+@export var attack_rate: float = 1
+@export var aggo_range: float = 100
+@export var attack_range: float = 40
+
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
-@onready var attack_timer: Timer = $AttackTimer
+@onready var attack_timer: Timer = $Timer
 @onready var health_bar: ProgressBar = $ProgressBar
 
 var player: Node2D = null
@@ -21,9 +21,9 @@ var facing: String = "down"
 var can_attack: bool = true
 var is_attacking: bool = false
 
-
 func _ready() -> void:
-	current_health = max_health
+	print(name, " ready — Detection node: ", detection_area)
+	current_health = health
 	_update_health_bar()
 
 	var players := get_tree().get_nodes_in_group("player")
@@ -35,21 +35,11 @@ func _ready() -> void:
 	detection_area.body_entered.connect(_on_detection_area_body_entered)
 	detection_area.body_exited.connect(_on_detection_area_body_exited)
 
-	attack_timer.wait_time = attack_cooldown
+	attack_timer.wait_time = attack_rate
 	attack_timer.one_shot = true
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
 
-func add_gold(amount: int) -> void:
-	if player and player.has_method("add_gold"):
-		player.add_gold(amount)
-	else:
-		push_warning("Minion couldn't find player to give gold to")
 
-func add_wood(amount: int) -> void:
-	if player and player.has_method("add_wood"):
-		player.add_wood(amount)
-	else:
-		push_warning("Minion couldn't find player to give wood to")
 
 func _physics_process(_delta: float) -> void:
 	_update_target()
@@ -65,14 +55,11 @@ func _physics_process(_delta: float) -> void:
 			_face_direction(direction)
 			_try_attack()
 		else:
-			velocity = direction.normalized() * move_speed
+			velocity = direction.normalized() * speed
 			_face_direction(direction)
-	else:
-		_follow_player()
 
 	move_and_slide()
 	_update_animation()
-
 
 func _update_target() -> void:
 	enemies_in_range = enemies_in_range.filter(func(e): return is_instance_valid(e))
@@ -92,22 +79,6 @@ func _update_target() -> void:
 	else:
 		current_target = null
 
-
-func _follow_player() -> void:
-	if player == null:
-		velocity = Vector2.ZERO
-		return
-
-	var desired_position: Vector2 = player.global_position + follow_offset
-	var to_desired: Vector2 = desired_position - global_position
-
-	if to_desired.length() <= follow_deadzone:
-		velocity = Vector2.ZERO
-	else:
-		velocity = to_desired.normalized() * move_speed
-		_face_direction(to_desired)
-
-
 func _try_attack() -> void:
 	if not can_attack or current_target == null:
 		return
@@ -120,7 +91,7 @@ func _try_attack() -> void:
 	# animation frame. See the note below on tying this to a hit-frame instead.
 	if current_target.has_method("take_damage"):
 		current_target.take_damage(strength)
-
+		
 
 func _on_attack_timer_timeout() -> void:
 	can_attack = true
@@ -140,31 +111,31 @@ func _play_attack_animation() -> void:
 	match facing:
 		"right":
 			anim.flip_h = false
-			anim.play(["Attack_Right_1", "Attack_Right_2"].pick_random())
+			anim.play("Attack_Right")
 		"left":
 			anim.flip_h = true
-			anim.play("Attack_Right_1")   # mirrored attack Left
+			anim.play("Attack_Right")   # mirrored attack Left
 		"down":
 			anim.flip_h = false
-			anim.play("Attack_Down_1")
+			anim.play("Attack_Down")
 		"up":
 			anim.flip_h = false
-			anim.play(["Attack_Up_1", "Attack_Up_2"].pick_random())
+			anim.play("Attack_Up")
 
 
 func _update_animation() -> void:
 	if is_attacking:
-		return   # let the attack animation play out undisturbed
+		return   
 
 	anim.flip_h = facing == "left"
-	if velocity.length() > 5.0:
-		anim.play("Walk")
+	if velocity.length() > 2.0:
+		anim.play("Run")
 	else:
 		anim.play("Idle")
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("minion"):
 		enemies_in_range.append(body)
 
 
@@ -183,9 +154,10 @@ func take_damage(amount: int) -> void:
 
 func _update_health_bar() -> void:
 	if health_bar:
-		health_bar.max_value = max_health
+		health_bar.max_value = health
 		health_bar.value = current_health
-		
+
+
 func _death() -> void:
 	set_physics_process(false)    
 	detection_area.monitoring = false  
