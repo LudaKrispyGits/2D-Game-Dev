@@ -285,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kdjjv")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_Down_1",
 "speed": 11.0
 }, {
@@ -311,7 +311,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pe264")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_Down_2",
 "speed": 11.0
 }, {
@@ -334,7 +334,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kgmgn")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_Right_1",
 "speed": 11.0
 }, {
@@ -360,7 +360,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ir6y7")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_Right_2",
 "speed": 11.0
 }, {
@@ -386,7 +386,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vgm58")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Attack_Up_1",
 "speed": 11.0
 }, {
@@ -409,7 +409,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pg3mf")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Attack_Up_2",
 "speed": 11.0
 }, {
@@ -432,7 +432,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hnc7w")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Idle",
 "speed": 8.0
 }, {
@@ -455,7 +455,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jje6k")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Walk",
 "speed": 8.0
 }, {
@@ -502,22 +502,22 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2utdn")
 }],
-"loop": 0,
+"loop": false,
 "name": &"die",
 "speed": 10.1
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
-radius = 368.01224
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0ye0"]
 radius = 21.568628
 height = 70.58824
 
-[node name="Minion_1" type="CharacterBody2D" unique_id=1130876174]
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 368.01224
+
+[node name="Minion_1" type="CharacterBody2D" unique_id=1130876174 groups=["minion"]]
 scale = Vector2(0.56, 0.56)
 collision_layer = 12
-collision_mask = 29
+collision_mask = 5
 platform_floor_layers = 4294967049
 platform_wall_layers = 4
 script = ExtResource("1_d0ye0")
@@ -532,9 +532,13 @@ sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"Idle"
 autoplay = "Idle"
 
+[node name="Collu" type="CollisionShape2D" parent="." unique_id=431734818]
+position = Vector2(0, -29.411766)
+shape = SubResource("CapsuleShape2D_d0ye0")
+
 [node name="Detection" type="Area2D" parent="." unique_id=1868961019]
-collision_layer = 25
-collision_mask = 8
+collision_layer = 4
+collision_mask = 29
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=1421171523]
 position = Vector2(0, -5)
@@ -547,7 +551,3 @@ offset_left = -50.0
 offset_top = -93.0
 offset_right = 53.0
 offset_bottom = -66.0
-
-[node name="Collu" type="CollisionShape2D" parent="." unique_id=431734818]
-position = Vector2(0, -29.411766)
-shape = SubResource("CapsuleShape2D_d0ye0")

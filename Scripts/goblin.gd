@@ -135,8 +135,12 @@ func _update_animation() -> void:
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
+	#print_debug(body)
 	if body.is_in_group("minion"):
 		enemies_in_range.append(body)
+	elif body.is_in_group("player"):
+		enemies_in_range.append(body)
+
 
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
@@ -160,7 +164,8 @@ func _update_health_bar() -> void:
 
 func _death() -> void:
 	set_physics_process(false)    
-	detection_area.monitoring = false  
+	detection_area.monitoring = false 
+	detection_area.monitorable = false
 	anim.play("die")           
 	await anim.animation_finished
 	queue_free()

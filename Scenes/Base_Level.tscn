@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c20ebdgfv1xsx" path="res://Tiny Swords (Free Pack)/Terrain/Decorations/Rubber Duck/Rubber duck.png" id="14_aofqy"]
 [ext_resource type="PackedScene" uid="uid://d2u0wr4wruoax" path="res://Scenes/Resoures/Gold_Small.tscn" id="15_qeexe"]
 [ext_resource type="PackedScene" uid="uid://duf43pgsb8y3c" path="res://Scenes/Resoures/Tree.tscn" id="16_6000k"]
-[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Player.tscn" id="17_3a5fj"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="17_3a5fj"]
 [ext_resource type="Texture2D" uid="uid://dk0rid6agkmcp" path="res://Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color3.png" id="18_s303j"]
 [ext_resource type="Texture2D" uid="uid://8ydhetfdtsj4" path="res://Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_01.png" id="19_7xl42"]
 [ext_resource type="Texture2D" uid="uid://ckg13kcvnoe7" path="res://Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_02.png" id="20_aofqy"]
@@ -781,14 +781,7 @@ tile_set = SubResource("TileSet_yf5fn")
 position = Vector2(163, 413)
 
 [node name="Enemy" parent="." unique_id=459387554 instance=ExtResource("28_ner20")]
-position = Vector2(680.00006, 377.00003)
+position = Vector2(475.00003, 233.00003)
 
-[node name="Minion_2" parent="." unique_id=1130876174 instance=ExtResource("27_aofqy")]
-position = Vector2(341.00003, 337.00003)
-scale = Vector2(0.588132, 0.588132)
-
-[node name="Minion_1" parent="." unique_id=1090926118 instance=ExtResource("27_aofqy")]
-position = Vector2(438, 244)
-
-[node name="Minion_3" parent="." unique_id=1475559699 instance=ExtResource("27_aofqy")]
-position = Vector2(214, 412)
+[node name="Minion_4" parent="." unique_id=2047529575 instance=ExtResource("27_aofqy")]
+position = Vector2(479, 1)
