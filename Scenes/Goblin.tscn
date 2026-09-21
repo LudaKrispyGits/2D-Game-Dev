@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bppkdp70d6u1x" path="res://Tiny Swords (Free Pack)/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_564fj"]
 [ext_resource type="Script" uid="uid://12jmgq1ic5m0" path="res://Scripts/goblin.gd" id="1_wqigr"]
+[ext_resource type="PackedScene" uid="uid://bibbsig07s5pb" path="res://Scenes/Resoures/Gold_Drop.tscn" id="2_gjpl2"]
+[ext_resource type="PackedScene" uid="uid://t3pvrrc0361e" path="res://Scenes/Resoures/Wood_Drop.tscn" id="3_02kj1"]
 [ext_resource type="Texture2D" uid="uid://bhqmmfdjp64s7" path="res://Tiny Swords (Free Pack)/Factions/Knights/Troops/Dead/Dead.png" id="3_128dr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83w5t"]
@@ -205,7 +207,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_snl7u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Attack_Down",
 "speed": 10.0
 }, {
@@ -228,7 +230,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f2pal")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Attack_Right",
 "speed": 10.0
 }, {
@@ -251,7 +253,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_52wrc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Attack_Up",
 "speed": 10.0
 }, {
@@ -277,7 +279,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c8wau")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 7.0
 }, {
@@ -300,7 +302,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y84u7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Run",
 "speed": 7.0
 }, {
@@ -347,25 +349,29 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_14reh")
 }],
-"loop": false,
+"loop": 0,
 "name": &"die",
 "speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
-radius = 501.07855
+radius = 1149.8184
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_128dr"]
-radius = 33.24154
+radius = 24.083189
 
 [node name="Enemy" type="CharacterBody2D" unique_id=459387554 groups=["enemy"]]
-scale = Vector2(0.465, 0.465)
+scale = Vector2(0.555, 0.555)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_wqigr")
+gold_pickup_scene = ExtResource("2_gjpl2")
+wood_pickup_scene = ExtResource("3_02kj1")
+speed = 110.0
+attack_rate = 0.7
+aggo_range = 250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439150386]
-scale = Vector2(1.326, 1.326)
 sprite_frames = SubResource("SpriteFrames_xxja1")
 animation = &"Idle"
 autoplay = "Idle"
@@ -388,7 +394,7 @@ offset_right = 53.0
 offset_bottom = -66.0
 
 [node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=1629020694]
-position = Vector2(1, 16)
+position = Vector2(-1, 6)
 shape = SubResource("CircleShape2D_128dr")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

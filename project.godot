@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Pacis-fish"
 run/main_scene="uid://ofyhin32v6qg"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
@@ -23,6 +23,7 @@ window/stretch/aspect="expand"
 [global_group]
 
 minion=""
+Spawner=""
 
 [input]
 
@@ -68,3 +69,4 @@ Attack={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+viewport/hdr_2d=true

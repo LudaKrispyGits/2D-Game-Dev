@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ns660e6c0asv"]
+
+[ext_resource type="Texture2D" uid="uid://df1wixag4xxf" path="res://Tiny Swords (Free Pack)/Particle FX/Water Splash.png" id="1_i8nxx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3al1"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xstc"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvm2y"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmmas"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvtgh"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3amwm"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5yql"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65tea"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23yhd"]
+atlas = ExtResource("1_i8nxx")
+region = Rect2(1536, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3al1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xstc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvm2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmmas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvtgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3amwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5yql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65tea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23yhd")
+}],
+"loop": 0,
+"name": &"Splash",
+"speed": 11.0
+}]
+
+[node name="Splash" type="Node2D" unique_id=1518012312]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=471407414]
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+animation = &"Splash"
+frame = 8
+frame_progress = 1.0

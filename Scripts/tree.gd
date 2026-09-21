@@ -3,7 +3,7 @@ extends StaticBody2D
 
 @export var spawn_y_offset: float = 115.0
 @export var wood_pickup_scene: PackedScene
-@export var spawn_interval: float = 2.0
+@export var spawn_interval: float = 10.0
 @export var spawn_radius: float = 55.0       # how far gold can land from the rock
 @export var min_spawn_radius: float = 20.0   # avoid spawning right on top of the rock
 @export var tween_duration: float = 0.4

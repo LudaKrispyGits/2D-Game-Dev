@@ -5,24 +5,53 @@ extends CharacterBody2D
 @export var follow_deadzone: float = 10.0
 @export var attack_range: float = 40.0
 @export var attack_cooldown: float = 1.2
-@export var strength: int = 5             # damage modifier
-@export var max_health: int = 50
+@export var strength: int = 2
+@export var max_health: int = 10
+@export var damage_frame: int = 4
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
 @onready var attack_timer: Timer = $AttackTimer
 @onready var health_bar: ProgressBar = $ProgressBar
+@onready var name_label: Label = $Name
 
 var player: Node2D = null
 var current_health: int
 var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null
+var attack_target: Node2D = null
 var facing: String = "down"
 var can_attack: bool = true
 var is_attacking: bool = false
+var damage_dealt_this_attack: bool = false
+var is_dead: bool = false
 
+@export var possible_names: Array[String] = [
+	"Bingus", "lingus", "Pingus", "Bongus", "Wongus",
+	"Hongus", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus"
+	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}"
+]
+
+var minion_name: String = ""
 
 func _ready() -> void:
+	minion_name = possible_names.pick_random() if possible_names.size() > 0 else "Minion"
+	print(minion_name, " spawned")
+	if name_label:
+		name_label.text = minion_name
+	if minion_name == "Joey":
+		strength = 1
+		max_health = 40
+		move_speed = 60
+		scale *= 1.6
+	elif minion_name == "Evil Joey":
+		strength = 100
+		max_health = 2
+		scale *= .5
+		move_speed = 300
+
+		
+		
 	current_health = max_health
 	_update_health_bar()
 
@@ -39,6 +68,9 @@ func _ready() -> void:
 	attack_timer.one_shot = true
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
 
+	anim.frame_changed.connect(_on_frame_changed)
+
+
 func add_gold(amount: int) -> void:
 	if player and player.has_method("add_gold"):
 		player.add_gold(amount)
@@ -50,6 +82,7 @@ func add_wood(amount: int) -> void:
 		player.add_wood(amount)
 	else:
 		push_warning("Minion couldn't find player to give wood to")
+
 
 func _physics_process(_delta: float) -> void:
 	_update_target()
@@ -113,22 +146,29 @@ func _try_attack() -> void:
 		return
 	can_attack = false
 	is_attacking = true
+	damage_dealt_this_attack = false
+	attack_target = current_target
 	_play_attack_animation()
 	attack_timer.start()
 
-	# NOTE: damage fires the instant the attack starts, not on a specific
-	# animation frame. See the note below on tying this to a hit-frame instead.
-	if current_target.has_method("take_damage"):
-		current_target.take_damage(strength)
+
+func _on_frame_changed() -> void:
+	if not is_attacking or damage_dealt_this_attack:
+		return
+	if anim.frame == damage_frame:
+		damage_dealt_this_attack = true
+		if is_instance_valid(attack_target) and attack_target.has_method("take_damage"):
+			attack_target.take_damage(strength)
 
 
 func _on_attack_timer_timeout() -> void:
 	can_attack = true
 	is_attacking = false
+	attack_target = null
 
 
 func _face_direction(direction: Vector2) -> void:
-	if direction.length() < 0.01:
+	if direction.length() < 0.02:
 		return
 	if abs(direction.x) > abs(direction.y):
 		facing = "right" if direction.x > 0 else "left"
@@ -143,7 +183,7 @@ func _play_attack_animation() -> void:
 			anim.play(["Attack_Right_1", "Attack_Right_2"].pick_random())
 		"left":
 			anim.flip_h = true
-			anim.play("Attack_Right_1")   # mirrored attack Left
+			anim.play("Attack_Right_1")
 		"down":
 			anim.flip_h = false
 			anim.play("Attack_Down_1")
@@ -154,7 +194,7 @@ func _play_attack_animation() -> void:
 
 func _update_animation() -> void:
 	if is_attacking:
-		return   # let the attack animation play out undisturbed
+		return
 
 	anim.flip_h = facing == "left"
 	if velocity.length() > 5.0:
@@ -175,9 +215,12 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 
 
 func take_damage(amount: int) -> void:
+	if is_dead:
+		return
 	current_health = max(current_health - amount, 0)
 	_update_health_bar()
 	if current_health <= 0:
+		is_dead = true
 		_death()
 
 
@@ -185,11 +228,20 @@ func _update_health_bar() -> void:
 	if health_bar:
 		health_bar.max_value = max_health
 		health_bar.value = current_health
-		
+
+
 func _death() -> void:
-	set_physics_process(false)    
-	detection_area.monitoring = false  
-	anim.play("die")           
+	set_physics_process(false)
+	detection_area.monitoring = false
+	anim.play("die")
 	await anim.animation_finished
 	queue_free()
-	
+
+func _animate_spawn(minion: Node2D, target_position: Vector2) -> void:
+	minion.scale = Vector2.ZERO
+	minion.modulate.a = 0.0
+
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
