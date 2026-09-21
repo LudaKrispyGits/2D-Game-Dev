@@ -25,17 +25,16 @@ var can_attack: bool = true
 var is_attacking: bool = false
 var damage_dealt_this_attack: bool = false
 var is_dead: bool = false
-
 @export var possible_names: Array[String] = [
 	"Bingus", "lingus", "Pingus", "Bongus", "Wongus",
-	"Hongus", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus"
-	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}"
+	"Hongus", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus"
+	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus","Flongus","Dongus","Crongus","","",""
 ]
 
 var minion_name: String = ""
 
 func _ready() -> void:
-	minion_name = possible_names.pick_random() if possible_names.size() > 0 else "Minion"
+	minion_name = possible_names.pick_random() if possible_names.size() > 0 else ""
 	print(minion_name, " spawned")
 	if name_label:
 		name_label.text = minion_name
