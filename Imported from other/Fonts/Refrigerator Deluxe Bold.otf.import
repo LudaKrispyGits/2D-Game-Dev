@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c7shcc80vegyq"
-path="res://.godot/imported/Minecraftia-Regular.ttf-35c69bd714fb3ad1ed7e9827fd791ecf.fontdata"
+uid="uid://bp7j0ggmvq2d6"
+path="res://.godot/imported/Refrigerator Deluxe Bold.otf-dcc58f5403401b7be55a0a39a0aae920.fontdata"
 
 [deps]
 
-source_file="res://Important Assets/Fonts/Minecraftia-Regular.ttf"
-dest_files=["res://.godot/imported/Minecraftia-Regular.ttf-35c69bd714fb3ad1ed7e9827fd791ecf.fontdata"]
+source_file="res://Imported from other/Fonts/Refrigerator Deluxe Bold.otf"
+dest_files=["res://.godot/imported/Refrigerator Deluxe Bold.otf-dcc58f5403401b7be55a0a39a0aae920.fontdata"]
 
 [params]
 

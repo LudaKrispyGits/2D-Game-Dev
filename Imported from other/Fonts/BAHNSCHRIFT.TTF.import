@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bp7j0ggmvq2d6"
-path="res://.godot/imported/Refrigerator Deluxe Bold.otf-3ca5af9ef33ddb94d6c561360d93ef4d.fontdata"
+uid="uid://bqhvqo823b2lc"
+path="res://.godot/imported/BAHNSCHRIFT.TTF-6209513a546a825d1f75ddc21905e9a4.fontdata"
 
 [deps]
 
-source_file="res://Important Assets/Fonts/Refrigerator Deluxe Bold.otf"
-dest_files=["res://.godot/imported/Refrigerator Deluxe Bold.otf-3ca5af9ef33ddb94d6c561360d93ef4d.fontdata"]
+source_file="res://Imported from other/Fonts/BAHNSCHRIFT.TTF"
+dest_files=["res://.godot/imported/BAHNSCHRIFT.TTF-6209513a546a825d1f75ddc21905e9a4.fontdata"]
 
 [params]
 

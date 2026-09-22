@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b0hi4usmswyeq"
-path="res://.godot/imported/Akira Expanded Demo.otf-28a475de149a405deb5c4f85345fcdbc.fontdata"
+uid="uid://c7shcc80vegyq"
+path="res://.godot/imported/Minecraftia-Regular.ttf-13072898e341dc6fce56f6b03e7a3f94.fontdata"
 
 [deps]
 
-source_file="res://Important Assets/Fonts/Akira Expanded Demo.otf"
-dest_files=["res://.godot/imported/Akira Expanded Demo.otf-28a475de149a405deb5c4f85345fcdbc.fontdata"]
+source_file="res://Imported from other/Fonts/Minecraftia-Regular.ttf"
+dest_files=["res://.godot/imported/Minecraftia-Regular.ttf-13072898e341dc6fce56f6b03e7a3f94.fontdata"]
 
 [params]
 

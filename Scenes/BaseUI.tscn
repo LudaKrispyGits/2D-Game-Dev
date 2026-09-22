@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b3igpyjhd7npu"]
+
+[ext_resource type="PackedScene" uid="uid://bkqixod10yhv4" path="res://Scenes/UI.tscn" id="1_va5en"]
+
+[node name="Node2D" unique_id=1111563238 instance=ExtResource("1_va5en")]
+
+[node name="Store" parent="." index="1" unique_id=1672596618]
+visible = false

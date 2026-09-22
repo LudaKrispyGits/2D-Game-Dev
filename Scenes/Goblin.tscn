@@ -367,7 +367,7 @@ collision_mask = 7
 script = ExtResource("1_wqigr")
 gold_pickup_scene = ExtResource("2_gjpl2")
 wood_pickup_scene = ExtResource("3_02kj1")
-speed = 110.0
+speed = 60.0
 attack_rate = 0.7
 aggo_range = 250.0
 
@@ -376,7 +376,7 @@ sprite_frames = SubResource("SpriteFrames_xxja1")
 animation = &"Idle"
 autoplay = "Idle"
 
-[node name="Detection" type="Area2D" parent="." unique_id=757817563]
+[node name="Detection" type="Area2D" parent="." unique_id=757817563 groups=["enemy"]]
 position = Vector2(0, 24)
 collision_layer = 8
 collision_mask = 6

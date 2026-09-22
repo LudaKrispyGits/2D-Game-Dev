@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://0ja8irjepp1y"
-path="res://.godot/imported/Refrigerator Deluxe Heavy.otf-cbdd9de58b9e91c6ee0a6b67dd8102d6.fontdata"
+uid="uid://b0hi4usmswyeq"
+path="res://.godot/imported/Akira Expanded Demo.otf-4b45c5acf334670339d65a6fd823f69e.fontdata"
 
 [deps]
 
-source_file="res://Important Assets/Fonts/Refrigerator Deluxe Heavy.otf"
-dest_files=["res://.godot/imported/Refrigerator Deluxe Heavy.otf-cbdd9de58b9e91c6ee0a6b67dd8102d6.fontdata"]
+source_file="res://Imported from other/Fonts/Akira Expanded Demo.otf"
+dest_files=["res://.godot/imported/Akira Expanded Demo.otf-4b45c5acf334670339d65a6fd823f69e.fontdata"]
 
 [params]
 

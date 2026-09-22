@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://1gn1p63wu3ad"
-path="res://.godot/imported/Genshin Impact DRIP FONT.ttf-bbd376f00b34d9a14dbcce221351fc2a.fontdata"
+uid="uid://0ja8irjepp1y"
+path="res://.godot/imported/Refrigerator Deluxe Heavy.otf-42875c6c950691d31ceee57c66f00fff.fontdata"
 
 [deps]
 
-source_file="res://Important Assets/Fonts/Genshin Impact DRIP FONT.ttf"
-dest_files=["res://.godot/imported/Genshin Impact DRIP FONT.ttf-bbd376f00b34d9a14dbcce221351fc2a.fontdata"]
+source_file="res://Imported from other/Fonts/Refrigerator Deluxe Heavy.otf"
+dest_files=["res://.godot/imported/Refrigerator Deluxe Heavy.otf-42875c6c950691d31ceee57c66f00fff.fontdata"]
 
 [params]
 

@@ -11,7 +11,8 @@ extends CharacterBody2D
 @export var aggo_range: float = 100
 @export var attack_range: float = 40
 
-
+var knockback_velocity: Vector2 = Vector2.ZERO
+var is_knocked_back: bool = false
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
 @onready var attack_timer: Timer = $Timer
@@ -45,7 +46,17 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if is_knocked_back:
+		velocity = knockback_velocity
+		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 800.0 * _delta)
+		if knockback_velocity.length() < 5.0:
+			is_knocked_back = false
+		move_and_slide()
+		return
+		
 	_update_target()
+	move_and_slide()
+	
 
 	if is_attacking:
 		velocity = Vector2.ZERO
@@ -164,12 +175,16 @@ func _update_health_bar() -> void:
 	if health_bar:
 		health_bar.max_value = health
 		health_bar.value = current_health
-
+		
+func apply_knockback(direction: Vector2, force: float) -> void:
+	is_knocked_back = true
+	knockback_velocity = direction.normalized() * force
 
 func _death() -> void:
 	set_physics_process(false)
 	detection_area.monitoring = false
 	detection_area.monitorable = false
+	$Hurtbox.set_deferred("disabled",true)
 
 	var pickup_scene: PackedScene
 	if randf() < 0.6:

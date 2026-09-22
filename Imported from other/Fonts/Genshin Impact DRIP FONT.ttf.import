@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bqhvqo823b2lc"
-path="res://.godot/imported/BAHNSCHRIFT.TTF-162ee36db3da1a5accf78817977187e4.fontdata"
+uid="uid://1gn1p63wu3ad"
+path="res://.godot/imported/Genshin Impact DRIP FONT.ttf-7047e122718b26c70bde9257dff10777.fontdata"
 
 [deps]
 
-source_file="res://Important Assets/Fonts/BAHNSCHRIFT.TTF"
-dest_files=["res://.godot/imported/BAHNSCHRIFT.TTF-162ee36db3da1a5accf78817977187e4.fontdata"]
+source_file="res://Imported from other/Fonts/Genshin Impact DRIP FONT.ttf"
+dest_files=["res://.godot/imported/Genshin Impact DRIP FONT.ttf-7047e122718b26c70bde9257dff10777.fontdata"]
 
 [params]
 

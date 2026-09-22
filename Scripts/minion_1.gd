@@ -28,7 +28,7 @@ var is_dead: bool = false
 @export var possible_names: Array[String] = [
 	"Bingus", "lingus", "Pingus", "Bongus", "Wongus",
 	"Hongus", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus"
-	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus","Flongus","Dongus","Crongus","","",""
+	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus","Flongus","Dongus","Crongus","Le Chonkus","",""
 ]
 
 var minion_name: String = ""
@@ -40,7 +40,7 @@ func _ready() -> void:
 		name_label.text = minion_name
 	if minion_name == "Joey":
 		strength = 1
-		max_health = 40
+		max_health = 30
 		move_speed = 60
 		scale *= 1.6
 	elif minion_name == "Evil Joey":
@@ -48,6 +48,11 @@ func _ready() -> void:
 		max_health = 2
 		scale *= .5
 		move_speed = 300
+	elif minion_name == "Le Chonkus":
+		strength = 1
+		max_health = 60
+		scale *= 2
+		move_speed = 0
 
 		
 		

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://baglsienfru8a" path="res://Tiny Swords (Free Pack)/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_0qvny"]
 [ext_resource type="Script" uid="uid://b3ps0dif8blfk" path="res://Scripts/minion_1.gd" id="1_d0ye0"]
 [ext_resource type="Texture2D" uid="uid://bhqmmfdjp64s7" path="res://Tiny Swords (Free Pack)/Factions/Knights/Troops/Dead/Dead.png" id="3_ehlp2"]
-[ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Important Assets/Fonts/Minecraftia-Regular.ttf" id="4_vxl4h"]
+[ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="4_vxl4h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qvny"]
 atlas = ExtResource("1_0qvny")
@@ -286,7 +286,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kdjjv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack_Down_1",
 "speed": 11.0
 }, {
@@ -312,7 +312,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pe264")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack_Down_2",
 "speed": 11.0
 }, {
@@ -335,7 +335,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kgmgn")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack_Right_1",
 "speed": 11.0
 }, {
@@ -361,7 +361,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ir6y7")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack_Right_2",
 "speed": 11.0
 }, {
@@ -387,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vgm58")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Attack_Up_1",
 "speed": 11.0
 }, {
@@ -410,7 +410,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pg3mf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Attack_Up_2",
 "speed": 11.0
 }, {
@@ -433,7 +433,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hnc7w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 8.0
 }, {
@@ -456,7 +456,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jje6k")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk",
 "speed": 8.0
 }, {
@@ -503,13 +503,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2utdn")
 }],
-"loop": false,
+"loop": 0,
 "name": &"die",
 "speed": 10.1
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vhfto"]
-radius = 25.148735
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxl4h"]
+radius = 23.362345
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
 radius = 487.5047
@@ -531,8 +531,8 @@ animation = &"Attack_Right_1"
 autoplay = "Idle"
 
 [node name="Collu" type="CollisionShape2D" parent="." unique_id=431734818]
-position = Vector2(0, -29.411766)
-shape = SubResource("CircleShape2D_vhfto")
+position = Vector2(0, -24.054626)
+shape = SubResource("CircleShape2D_vxl4h")
 
 [node name="Detection" type="Area2D" parent="." unique_id=1868961019]
 collision_layer = 4
@@ -549,6 +549,7 @@ offset_left = -50.0
 offset_top = -93.0
 offset_right = 53.0
 offset_bottom = -66.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="Label" parent="." unique_id=1870493530]
 modulate = Color(0.9683183, 0.96927804, 0.9703794, 1)
@@ -568,3 +569,4 @@ theme_override_constants/outline_size = 6
 theme_override_constants/shadow_outline_size = -58
 theme_override_fonts/font = ExtResource("4_vxl4h")
 text = "Name Here"
+metadata/_edit_use_anchors_ = true
