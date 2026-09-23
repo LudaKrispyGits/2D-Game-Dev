@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Pacis-fish"
-run/main_scene="uid://ofyhin32v6qg"
+run/main_scene="uid://b8ooj2l3svbnv"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://4ejpebdg1wdk"
 
 [display]
 

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c84og0o64t1ni" path="res://Scripts/slime_spawner.gd" id="1_8p237"]
 [ext_resource type="PackedScene" uid="uid://mbhogf8fg6pv" path="res://Scenes/WaterSlime.tscn" id="2_ityl0"]
-[ext_resource type="PackedScene" uid="uid://bi2dl74itq3wu" path="res://Scenes/explosions.tscn" id="3_mwc3s"]
+[ext_resource type="PackedScene" uid="uid://ns660e6c0asv" path="res://Scenes/splash.tscn" id="3_ityl0"]
 
 [node name="SlimeSpawner" type="Node2D" unique_id=1476491033]
 script = ExtResource("1_8p237")
 slime_scene = ExtResource("2_ityl0")
-splash_scene = ExtResource("3_mwc3s")
+splash_scene = ExtResource("3_ityl0")
 
 [node name="Timer" type="Timer" parent="." unique_id=24450501]

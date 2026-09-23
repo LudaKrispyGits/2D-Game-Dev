@@ -22,8 +22,8 @@ func _ready() -> void:
 	var players := get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
-		player.resources_changed.connect(_on_resources_changed)
-		_update_button_state(player.gold, player.wood)
+		_update_button_state(GameManager.gold, GameManager.wood)
+		GameManager.resources_changed.connect(_on_resources_changed)
 	else:
 		push_warning("MinionShopCard: no player found in 'player' group")
 		buy_button.disabled = true

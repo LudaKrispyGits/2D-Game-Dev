@@ -22,8 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://cnw34a4kfuo4y" path="res://Scenes/Minion_1.tscn" id="20_7amti"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Player.tscn" id="21_dmogd"]
 [ext_resource type="PackedScene" uid="uid://dtcecksxd0woy" path="res://Scenes/slime_spawner.tscn" id="23_m4uks"]
-[ext_resource type="PackedScene" uid="uid://mbhogf8fg6pv" path="res://Scenes/WaterSlime.tscn" id="24_ljnq7"]
 [ext_resource type="PackedScene" uid="uid://b3igpyjhd7npu" path="res://Scenes/BaseUI.tscn" id="24_m4uks"]
+[ext_resource type="PackedScene" uid="uid://bnp1kcgfsmry8" path="res://Portal.tscn" id="25_ljnq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bd0w4"]
 texture = ExtResource("1_eof0v")
@@ -850,47 +850,23 @@ tile_map_data = PackedByteArray("AAAVAAYAAAAAAAUAAAAVAAQAAAAAAAUAAAAVAAUAAAAAAAQ
 tile_set = SubResource("TileSet_1e4w3")
 
 [node name="Player" parent="." unique_id=790512595 instance=ExtResource("21_dmogd")]
-position = Vector2(1234, 380)
+position = Vector2(-265, 351)
 
 [node name="Deco" type="TileMapLayer" parent="." unique_id=1086628314]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAANABIABwAAAAAAAAAgAAIABwAAAAAAAADz/wQABwAAAAAAAADz/xAABwAAAAAAAADr/xEABwAAAAAAAAAIABYABwAAAAAAAAAyABMABwAAAAAAAAAwAAIABwAAAAAAAABBAAUABwAAAAAAAAD2/wkAAAAAAAAAAADt/wkABgAAAAAAAADq/wcABgAAAAAAAADr/woABgAAAAAAAADu/woABgAAAAAAAADs/wUABgAAAAAAAADu/wUABgAAAAAAAADw/wkABgAAAAAAAADv/wgABgAAAAAAAADx/wUABgAAAAAAAAACAP7/BQAAAAAAAAAcAP//BQAAAAAAAAAKAAsABQAAAAAAAAAvAAMABQAAAAAAAAA2AAMABQAAAAAAAAA/AAMABQAAAAAAAABHAAMABQAAAAAAAAAyAAYABAAAAAAAAAA5AAYABAAAAAAAAAA9AAYABAAAAAAAAABBAAYABAAAAAAAAABFAAYABAAAAAAAAAA0AAYAAwAAAAAAAAAqAAoAAwAAAAAAAAAdAAIAAwAAAAAAAAAEAAAAAwAAAAAAAADy/wgAAwAAAAAAAAAJAA4AAwAAAAAAAAAAABEAAwAAAAAAAAABABAAAgAAAAAAAAANAA0AAgAAAAAAAAAFAAEAAgAAAAAAAAArAA4AAgAAAAAAAAAuAAYAAgAAAAAAAABCAAYAAgAAAAAAAABJAAcAAgAAAAAAAABFAAoAAgAAAAAAAAD4/wQABAAAAAAAAAADAAIAAAAAAAAAAAAFAAcAAAAAAAAAAAABABEAAAAAAAAAAAD6/xEAAAAAAAAAAAALAA8AAAAAAAAAAAAaAAcAAAAAAAAAAAApAAsAAAAAAAAAAAAvAAcAAAAAAAAAAAA+AAcAAAAAAAAAAABEAAsAAAAAAAAAAADx/w0AAAAAAAAAAABWAAIABQAAAAAAAABZAAIABQAAAAAAAABeAAMABQAAAAAAAABdAAMABQAAAAAAAABbAAsABQAAAAAAAABYAAsABQAAAAAAAABcAAkABQAAAAAAAABeAAgABQAAAAAAAABWAAMABQAAAAAAAABaAAIABQAAAAAAAABWAAgABQAAAAAAAABZAAgABQAAAAAAAABVAAoABQAAAAAAAABZAAsABQAAAAAAAABXAAQABQAAAAAAAABaAAMABQAAAAAAAABcAAUABQAAAAAAAABfAAYABQAAAAAAAABeAAQABQAAAAAAAABUAAQABQAAAAAAAABTAAUABQAAAAAAAAA=")
 tile_set = SubResource("TileSet_jecu1")
 
-[node name="Minion_1" parent="." unique_id=1130876174 instance=ExtResource("20_7amti")]
-position = Vector2(576, 368.99997)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
-
-[node name="Minion_3" parent="." unique_id=1040818214 instance=ExtResource("20_7amti")]
-position = Vector2(750, 111)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
-
-[node name="Minion_2" parent="." unique_id=375235389 instance=ExtResource("20_7amti")]
-visible = false
-position = Vector2(-386, 335)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
-
 [node name="Opps" type="Area2D" parent="." unique_id=2070930090]
 
-[node name="Enemy2" parent="Opps" unique_id=396813848 instance=ExtResource("16_rly41")]
-position = Vector2(1702, 280)
-
-[node name="Enemy3" parent="Opps" unique_id=459387554 instance=ExtResource("16_rly41")]
-position = Vector2(1365, 577)
-
 [node name="Enemy" parent="Opps" unique_id=997989601 instance=ExtResource("16_rly41")]
-position = Vector2(2296, 277)
+position = Vector2(2277, 295)
 
 [node name="SlimeSpawner" parent="Opps" unique_id=1476491033 instance=ExtResource("23_m4uks")]
-position = Vector2(408.99997, 226)
-scale = Vector2(2.485, 2.485)
+position = Vector2(280, 540)
 
-[node name="SlimeSpawner2" parent="Opps" unique_id=460029241 instance=ExtResource("23_m4uks")]
-position = Vector2(1421, 661)
-scale = Vector2(2.485, 2.485)
-
-[node name="WataSlime" parent="Opps" unique_id=495019936 instance=ExtResource("24_ljnq7")]
-position = Vector2(147, 401)
+[node name="SlimeSpawner2" parent="Opps" unique_id=262225891 instance=ExtResource("23_m4uks")]
+position = Vector2(295, 226)
 
 [node name="Pickups" type="Area2D" parent="." unique_id=227102525]
 
@@ -919,10 +895,34 @@ position = Vector2(925.99994, 109)
 position = Vector2(1784, 226)
 
 [node name="Gold" parent="Pickups" unique_id=947607131 instance=ExtResource("17_m2wfk")]
-visible = false
 position = Vector2(-191, 523)
+
+[node name="Gold4" parent="Pickups" unique_id=583384327 instance=ExtResource("17_m2wfk")]
+position = Vector2(-28, 89)
 
 [node name="Gold2" parent="Pickups" unique_id=7727552 instance=ExtResource("17_m2wfk")]
 position = Vector2(1269, 555)
 
+[node name="Gold3" parent="Pickups" unique_id=2058703024 instance=ExtResource("17_m2wfk")]
+position = Vector2(575, 93)
+
+[node name="Minions" type="Area2D" parent="." unique_id=645935614]
+
+[node name="Minion_1" parent="Minions" unique_id=1130876174 instance=ExtResource("20_7amti")]
+position = Vector2(576, 368.99997)
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
+
+[node name="Minion_3" parent="Minions" unique_id=1040818214 instance=ExtResource("20_7amti")]
+position = Vector2(676.99994, 102)
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
+
+[node name="Minion_2" parent="Minions" unique_id=375235389 instance=ExtResource("20_7amti")]
+position = Vector2(-386, 335)
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
+
 [node name="UI" parent="." unique_id=1111563238 instance=ExtResource("24_m4uks")]
+
+[node name="Exit" parent="." unique_id=1584259905 instance=ExtResource("25_ljnq7")]
+position = Vector2(2692.9998, 314)
+check_interval = 0.5
+cleared_text = "Proceed tp Level 2"

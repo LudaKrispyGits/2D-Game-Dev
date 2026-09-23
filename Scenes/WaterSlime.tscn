@@ -171,6 +171,8 @@ radius = 9.848858
 collision_layer = 12
 collision_mask = 0
 script = ExtResource("1_3qv5g")
+move_speed = 80.0
+aggro_range = 450.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1093512910]
 self_modulate = Color(1.5889667, 1.7245166, 3.7408223, 1)

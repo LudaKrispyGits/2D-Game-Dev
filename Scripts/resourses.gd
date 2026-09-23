@@ -9,8 +9,8 @@ func _ready() -> void:
 	var players := get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
-		player.resources_changed.connect(_on_resources_changed)
-		_on_resources_changed(player.gold, player.wood)
+		GameManager.resources_changed.connect(_on_resources_changed)
+		_on_resources_changed(GameManager.gold, GameManager.wood)
 	else:
 		push_warning("ResourceDisplay: no player found in 'player' group")
 

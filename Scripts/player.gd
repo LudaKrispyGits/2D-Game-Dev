@@ -12,9 +12,6 @@ signal resources_changed(gold: int, wood: int)
 @onready var hitbox: Area2D = $Hitbox
 @onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
 
-var gold: int = 2
-var wood: int = 2
-
 var last_direction: Vector2 = Vector2.RIGHT
 var is_attacking: bool = false
 var knockback_dealt_this_attack: bool = false
@@ -79,25 +76,13 @@ func _update_movement_animation(input_vector: Vector2) -> void:
 
 
 func add_gold(amount: int) -> void:
-	gold += amount
-	print("Gold: ", gold)
-	resources_changed.emit(gold, wood)
-
+	GameManager.add_gold(amount)
 
 func add_wood(amount: int) -> void:
-	wood += amount
-	print("Wood: ", wood)
-	resources_changed.emit(gold, wood)
-
+	GameManager.add_wood(amount)
 
 func spend_resources(gold_cost: int, wood_cost: int) -> bool:
-	if gold < gold_cost or wood < wood_cost:
-		print("Player doesn't have enough gold or wood")
-		return false
-	gold -= gold_cost
-	wood -= wood_cost
-	resources_changed.emit(gold, wood)
-	return true
+	return GameManager.spend_resources(gold_cost, wood_cost)
 
 
 func play_animation(prefix: String, dir: Vector2) -> void:

@@ -109,9 +109,6 @@ radius = 23.0
 y_sort_enabled = true
 script = ExtResource("1_wh1iq")
 gold_pickup_scene = ExtResource("2_ykgnj")
-spawn_interval = 2.0
-spawn_radius = 60.0
-tween_duration = 0.7
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1175376437]
 sprite_frames = SubResource("SpriteFrames_g4v7s")

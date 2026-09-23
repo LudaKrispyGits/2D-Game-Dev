@@ -11,6 +11,12 @@ extends StaticBody2D
 
 @export var max_health: int = 30
 
+@export var gold_pickup_scene: PackedScene
+@export var gold_drop_amount: int = randf_range(1,3)
+
+@export var wood_pickup_scene: PackedScene
+@export var wood_drop_amount: int = randf_range(5,7)
+
 @onready var spawn_timer: Timer = $Timer
 @onready var hurtbox: Area2D = $Hurtbox
 @onready var health_bar: ProgressBar = $ProgressBar
@@ -79,6 +85,20 @@ func _update_health_bar() -> void:
 func _destroy() -> void:
 	spawn_timer.stop()
 	hurtbox.monitorable = false
+
+	if gold_pickup_scene:
+		for i in range(gold_drop_amount):
+			var pickup = gold_pickup_scene.instantiate()
+			get_parent().add_child(pickup)
+			var offset: Vector2 = Vector2(randf_range(-15, 15), randf_range(-15, 15))
+			pickup.global_position = global_position + offset
+	if wood_pickup_scene:
+		for i in range(wood_drop_amount):
+			var wpickup = wood_pickup_scene.instantiate()
+			get_parent().add_child(wpickup)
+			var offset: Vector2 = Vector2(randf_range(-15, 15), randf_range(-15, 15))
+			wpickup.global_position = global_position + offset
+		
 	if explosion_scene:
 		var explosion = explosion_scene.instantiate()
 		get_tree().current_scene.add_child(explosion)

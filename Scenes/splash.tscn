@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ns660e6c0asv"]
 
 [ext_resource type="Texture2D" uid="uid://df1wixag4xxf" path="res://Tiny Swords (Free Pack)/Particle FX/Water Splash.png" id="1_i8nxx"]
+[ext_resource type="Script" uid="uid://b2m1k0wm0lkfk" path="res://Scripts/splash.gd" id="1_t3al1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3al1"]
 atlas = ExtResource("1_i8nxx")
@@ -38,7 +39,7 @@ region = Rect2(1344, 0, 192, 192)
 atlas = ExtResource("1_i8nxx")
 region = Rect2(1536, 0, 192, 192)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -70,13 +71,12 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Splash",
-"speed": 11.0
+"speed": 10.0
 }]
 
-[node name="Splash" type="Node2D" unique_id=1518012312]
+[node name="Splash" type="Node2D" unique_id=1454817267]
+script = ExtResource("1_t3al1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=471407414]
-sprite_frames = SubResource("SpriteFrames_yf5fn")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1616507869]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"Splash"
-frame = 8
-frame_progress = 1.0

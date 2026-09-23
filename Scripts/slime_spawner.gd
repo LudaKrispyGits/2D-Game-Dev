@@ -2,12 +2,12 @@ extends Node2D
 
 @export var slime_scene: PackedScene
 @export var splash_scene: PackedScene
-@export var spawn_interval: float = 5.0
+@export var spawn_interval: float = 2.0
 @export var spawn_radius: float = 30.0
 @export var min_spawn_radius: float = 10.0
 @export var splash_lead_time: float = 0.3
 @export var max_alive: int = 1
-@export var max_total_spawns: int = 4
+@export var max_total_spawns: int = 3
 
 @onready var spawn_timer: Timer = $Timer
 
