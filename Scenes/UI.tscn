@@ -62,6 +62,7 @@ size_flags_vertical = 4
 script = ExtResource("4_hfhsn")
 minion_scene = ExtResource("5_qwshj")
 explosion_scene = ExtResource("6_mg6lk")
+wood_cost = 3
 
 [node name="TextureRect" type="TextureRect" parent="Store/Minioncards" unique_id=1313360841]
 layout_mode = 2
@@ -116,7 +117,7 @@ script = ExtResource("4_hfhsn")
 minion_scene = ExtResource("10_j04uc")
 explosion_scene = ExtResource("6_mg6lk")
 gold_cost = 3
-wood_cost = 3
+wood_cost = 4
 
 [node name="TextureRect" type="TextureRect" parent="Store/Minioncards_bow" unique_id=599950786]
 layout_mode = 2

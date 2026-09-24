@@ -1112,12 +1112,16 @@ position = Vector2(722.00006, 356)
 [node name="Spawner2" parent="Spawners" unique_id=435856879 instance=ExtResource("29_6gtrk")]
 position = Vector2(487, 304)
 spawn_interval = 8.0
+gold_drop_amount = 3
 wood_pickup_scene = ExtResource("34_htd01")
+wood_drop_amount = 5
 
 [node name="Spawner3" parent="Spawners" unique_id=1522870633 instance=ExtResource("29_6gtrk")]
 position = Vector2(1742, 418)
 spawn_interval = 7.88
+gold_drop_amount = 3
 wood_pickup_scene = ExtResource("34_htd01")
+wood_drop_amount = 5
 
 [node name="Exit" parent="." unique_id=1584259905 instance=ExtResource("30_5hda4")]
 position = Vector2(1922, 532)

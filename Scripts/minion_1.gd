@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var max_health: int = 10
 @export var damage_frame: int = 4
 
+@onready var sword: AudioStreamPlayer2D = $Sound
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
 @onready var attack_timer: Timer = $AttackTimer
@@ -199,14 +200,18 @@ func _play_attack_animation() -> void:
 		"right":
 			anim.flip_h = false
 			anim.play(["Attack_Right_1", "Attack_Right_2"].pick_random())
+			sword.play()
 		"left":
 			anim.flip_h = true
+			sword.play()
 			anim.play("Attack_Right_1")
 		"down":
 			anim.flip_h = false
+			sword.play()
 			anim.play("Attack_Down_1")
 		"up":
 			anim.flip_h = false
+			sword.play()
 			anim.play(["Attack_Up_1", "Attack_Up_2"].pick_random())
 
 
@@ -215,7 +220,7 @@ func _update_animation() -> void:
 		return
 
 	anim.flip_h = facing == "left"
-	if velocity.length() > 5.0:
+	if velocity.length() > 3.0:
 		anim.play("Walk")
 	else:
 		anim.play("Idle")

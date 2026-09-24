@@ -31,9 +31,10 @@ func _ready() -> void:
 func _check_level_cleared() -> void:
 	if level_cleared:
 		return
-
+		
 	var enemies := get_tree().get_nodes_in_group("enemy")
-	var remaining: int = enemies.size() - 1
+	var spawners := get_tree().get_nodes_in_group("Spawner")
+	var remaining: int = enemies.size() + spawners.size() 
 	print("Checking level cleared — enemies remaining: ", remaining)
 
 	if remaining <= 0:

@@ -168,9 +168,10 @@ radius = 11.18034
 radius = 9.848858
 
 [node name="WataSlime" type="CharacterBody2D" unique_id=495019936 groups=["enemy"]]
-collision_layer = 12
+collision_layer = 13
 collision_mask = 0
 script = ExtResource("1_3qv5g")
+health = 6
 move_speed = 80.0
 aggro_range = 450.0
 
@@ -195,8 +196,10 @@ shape = SubResource("CircleShape2D_4gu08")
 debug_color = Color(0.98951954, 0, 0.29493925, 0.41960785)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1274701011]
+modulate = Color(1.4369954, 0, 0, 1)
 offset_left = -42.0
 offset_top = -36.0
 offset_right = 43.0
 offset_bottom = -12.0
 theme_override_font_sizes/font_size = 14
+show_percentage = false

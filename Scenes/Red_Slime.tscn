@@ -195,8 +195,10 @@ shape = SubResource("CircleShape2D_phbi0")
 debug_color = Color(0.98951954, 0, 0.29493925, 0.41960785)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=390363976]
+modulate = Color(1.3262677, 0, 0, 1)
 offset_left = -42.0
 offset_top = -36.0
 offset_right = 43.0
 offset_bottom = -12.0
 theme_override_font_sizes/font_size = 14
+show_percentage = false

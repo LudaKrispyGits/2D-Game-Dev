@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var move_speed: float = 110.0
 @export var follow_offset: Vector2 = Vector2(0, 30)
 @export var follow_deadzone: float = 10.0
-@export var attack_range: float = 160.0
+@export var attack_range: float = 190.0
 @export var attack_cooldown: float = 1.6
 @export var strength: int = 2
 @export var max_health: int = 10

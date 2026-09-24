@@ -862,7 +862,7 @@ tile_set = SubResource("TileSet_jecu1")
 position = Vector2(2277, 295)
 
 [node name="SlimeSpawner" parent="Opps" unique_id=1476491033 instance=ExtResource("23_m4uks")]
-position = Vector2(280, 540)
+position = Vector2(292, 555)
 max_total_spawns = 2
 
 [node name="SlimeSpawner2" parent="Opps" unique_id=262225891 instance=ExtResource("23_m4uks")]
