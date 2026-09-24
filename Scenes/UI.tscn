@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dcl7vknrb5cd3" path="res://Screenshot 2026-09-20 001043.png" id="6_48q88"]
 [ext_resource type="PackedScene" uid="uid://bi2dl74itq3wu" path="res://Scenes/explosions.tscn" id="6_mg6lk"]
 [ext_resource type="Script" uid="uid://v1x6vskffmif" path="res://Scripts/buy_button.gd" id="7_xjg7p"]
+[ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="8_wunin"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1111563238]
 
 [node name="resourses" type="HBoxContainer" parent="." unique_id=137154144]
+clip_contents = true
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_vertical = 8
@@ -36,17 +38,20 @@ layout_mode = 2
 text = "Wood"
 
 [node name="Store" type="PanelContainer" parent="." unique_id=1672596618]
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -246.0
-offset_right = 297.0
+offset_left = -148.5
+offset_top = -188.0
+offset_right = 148.5
+offset_bottom = 98.0
+grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.63, 0.63)
 size_flags_horizontal = 8
 size_flags_vertical = 8
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 40.87)
-offset_transform_scale = Vector2(0.53, 0.53)
 
 [node name="Minioncards" type="VBoxContainer" parent="Store" unique_id=1633801511]
 layout_mode = 2
@@ -58,7 +63,6 @@ explosion_scene = ExtResource("6_mg6lk")
 
 [node name="TextureRect" type="TextureRect" parent="Store/Minioncards" unique_id=1313360841]
 layout_mode = 2
-offset_transform_enabled = true
 texture = ExtResource("6_48q88")
 stretch_mode = 3
 
@@ -90,5 +94,7 @@ vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="Store/Minioncards" unique_id=1288714142]
 layout_mode = 2
-text = "Spawn Minon."
+theme_override_fonts/font = ExtResource("8_wunin")
+theme_override_font_sizes/font_size = 36
+text = "Hire Knight."
 script = ExtResource("7_xjg7p")

@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://hqmemqpltrv3" path="res://Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_06.png" id="21_jwso2"]
 [ext_resource type="Texture2D" uid="uid://dbivcypu3txg0" path="res://Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_07.png" id="22_yxnav"]
 [ext_resource type="Texture2D" uid="uid://cytdrc7ywsr1r" path="res://Tiny Swords (Free Pack)/Terrain/Decorations/Clouds/Clouds_08.png" id="23_mhi33"]
-[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Player.tscn" id="24_fonme"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/player.tscn" id="24_fonme"]
 [ext_resource type="PackedScene" uid="uid://drjhxvi3euxri" path="res://Scenes/Goblin.tscn" id="25_gp66y"]
 [ext_resource type="Texture2D" uid="uid://druu563iovo4e" path="res://Imported from other/Assets/Outdoor Tings/Outdoor_Decor_Free.png" id="26_8uqb6"]
 [ext_resource type="PackedScene" uid="uid://bkqixod10yhv4" path="res://Scenes/UI.tscn" id="26_uq7le"]
@@ -1032,6 +1032,10 @@ tile_set = SubResource("TileSet_qw01e")
 tile_map_data = PackedByteArray("AAAHAAAAAAAAAAQAAAAHAAEAAAAAAAUAAAD///z/AAAAAAQAAAD///3/AAAAAAUAAAAFAP7/AAADAAQAAAAFAP//AAADAAUAAAASAAoAAAADAAQAAAASAAsAAAADAAUAAAAHAAwAAAAAAAQAAAAHAA0AAAAAAAUAAAAGAAoAAAADAAQAAAAGAAsAAAADAAUAAAAAAAUAAAADAAQAAAAAAAYAAAADAAUAAAA=")
 tile_set = SubResource("TileSet_57qmd")
 
+[node name="Player" parent="MAP" unique_id=790512595 instance=ExtResource("24_fonme")]
+position = Vector2(-640, 99)
+move_speed = 150.0
+
 [node name="Puprle shit" type="CharacterBody2D" parent="MAP" unique_id=313390409]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MAP/Puprle shit" unique_id=650122171]
@@ -1058,10 +1062,6 @@ tile_set = SubResource("TileSet_d0u6y")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AADn//7/BQAAAAAAAADq////BQAAAAAAAADn/wMABQAAAAAAAADo/wAABQAAAAAAAADm/wYABQAAAAAAAADp/wQABQAAAAAAAADq/wIABQAAAAAAAADm/wAABQAAAAAAAADl/wIABQAAAAAAAADj/wUABQAAAAAAAADr/wMABQAAAAAAAADy/wIABAAAAAAAAAD8/wAABAAAAAAAAAD7/wIABAAAAAAAAADy/wAABAAAAAAAAAABAPb/BAAAAAAAAAD8//j/AwAAAAAAAAAQAP3/AwAAAAAAAAAZAAMAAwAAAAAAAAAeAAYAAwAAAAAAAAAMABQAAwAAAAAAAAD+/w4AAwAAAAAAAAD//w4AAwAAAAAAAAD5/wIAAwAAAAAAAAD0/wIAAwAAAAAAAADt/wUAAwAAAAAAAADr/wcAAwAAAAAAAAABAPv/AwAAAAAAAAAGAPn/AwAAAAAAAAAQAAIAAAAAAAAAAAACAPv/AAAAAAAAAAAEAAIAAAAAAAAAAAANABUAAAAAAAAAAAAfAA8AAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAD6/wIAAAAAAAAAAADz/wIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_cdqv8")
-
-[node name="Player" parent="." unique_id=790512595 instance=ExtResource("24_fonme")]
-position = Vector2(-640, 99)
-move_speed = 150.0
 
 [node name="UI" parent="." unique_id=1111563238 instance=ExtResource("26_uq7le")]
 
