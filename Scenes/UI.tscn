@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bi2dl74itq3wu" path="res://Scenes/explosions.tscn" id="6_mg6lk"]
 [ext_resource type="Script" uid="uid://v1x6vskffmif" path="res://Scripts/buy_button.gd" id="7_xjg7p"]
 [ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="8_wunin"]
+[ext_resource type="PackedScene" uid="uid://cpx585xe7t74o" path="res://Scenes/Archer_Minion.tscn" id="10_j04uc"]
+[ext_resource type="Texture2D" uid="uid://txol84mjji2d" path="res://Screenshot 2026-09-23 221657.png" id="11_vqx31"]
 
 [node name="Node2D" type="CanvasLayer" unique_id=1111563238]
 
@@ -45,7 +47,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -148.5
 offset_top = -188.0
-offset_right = 148.5
+offset_right = 463.40466
 offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -55,7 +57,7 @@ size_flags_vertical = 8
 
 [node name="Minioncards" type="VBoxContainer" parent="Store" unique_id=1633801511]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
 script = ExtResource("4_hfhsn")
 minion_scene = ExtResource("5_qwshj")
@@ -63,8 +65,12 @@ explosion_scene = ExtResource("6_mg6lk")
 
 [node name="TextureRect" type="TextureRect" parent="Store/Minioncards" unique_id=1313360841]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 13.2)
+offset_transform_scale = Vector2(1.7, 1.7)
 texture = ExtResource("6_48q88")
-stretch_mode = 3
 
 [node name="CostRow" type="HBoxContainer" parent="Store/Minioncards" unique_id=1105225504]
 layout_mode = 2
@@ -94,7 +100,60 @@ vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="Store/Minioncards" unique_id=1288714142]
 layout_mode = 2
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(9.085, 22.955)
+theme_override_fonts/font = ExtResource("8_wunin")
+theme_override_font_sizes/font_size = 33
+text = "Hire Knight."
+script = ExtResource("7_xjg7p")
+
+[node name="Minioncards_bow" type="VBoxContainer" parent="Store" unique_id=2089121683]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+script = ExtResource("4_hfhsn")
+minion_scene = ExtResource("10_j04uc")
+explosion_scene = ExtResource("6_mg6lk")
+gold_cost = 3
+wood_cost = 3
+
+[node name="TextureRect" type="TextureRect" parent="Store/Minioncards_bow" unique_id=599950786]
+layout_mode = 2
+texture = ExtResource("11_vqx31")
+stretch_mode = 3
+
+[node name="CostRow" type="HBoxContainer" parent="Store/Minioncards_bow" unique_id=784352864]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="GoldCostIcon" type="TextureRect" parent="Store/Minioncards_bow/CostRow" unique_id=559067966]
+layout_mode = 2
+texture = ExtResource("1_w371h")
+
+[node name="GoldCostLabel" type="Label" parent="Store/Minioncards_bow/CostRow" unique_id=1707485135]
+layout_mode = 2
+text = "5"
+
+[node name="WoodCostIcon" type="TextureRect" parent="Store/Minioncards_bow/CostRow" unique_id=777357483]
+layout_mode = 2
+texture = ExtResource("2_nxvpl")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="WoodCostLabel" type="Label" parent="Store/Minioncards_bow/CostRow" unique_id=804217936]
+layout_mode = 2
+text = "10
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="Store/Minioncards_bow" unique_id=1887421312]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-8.06, 0)
 theme_override_fonts/font = ExtResource("8_wunin")
 theme_override_font_sizes/font_size = 36
-text = "Hire Knight."
+text = "Hire Archer."
 script = ExtResource("7_xjg7p")

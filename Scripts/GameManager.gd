@@ -2,8 +2,8 @@ extends Node
 
 signal resources_changed(gold: int, wood: int)
 
-var gold: int = 20
-var wood: int = 20
+var gold: int = 5
+var wood: int = 5
 
 
 func add_gold(amount: int) -> void:

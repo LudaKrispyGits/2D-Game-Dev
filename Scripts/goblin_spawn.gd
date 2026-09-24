@@ -12,10 +12,10 @@ extends StaticBody2D
 @export var max_health: int = 30
 
 @export var gold_pickup_scene: PackedScene
-@export var gold_drop_amount: int = randf_range(1,3)
+@export var gold_drop_amount: int = randf_range(3,6)
 
 @export var wood_pickup_scene: PackedScene
-@export var wood_drop_amount: int = randf_range(5,7)
+@export var wood_drop_amount: int = randf_range(6,8)
 
 @onready var spawn_timer: Timer = $Timer
 @onready var hurtbox: Area2D = $Hurtbox

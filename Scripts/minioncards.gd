@@ -2,8 +2,8 @@ extends VBoxContainer
 
 @export var minion_scene: PackedScene
 @export var explosion_scene: PackedScene
-@export var gold_cost: int = 1
-@export var wood_cost: int = 1
+@export var gold_cost: int = 2
+@export var wood_cost: int = 2
 @export var spawn_radius: float = 40.0
 @export var min_spawn_radius: float = 20.0
 @export var minion_spawn_offset: Vector2 = Vector2(0, 40)

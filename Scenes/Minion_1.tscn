@@ -522,7 +522,7 @@ platform_floor_layers = 4294967049
 platform_wall_layers = 4
 script = ExtResource("1_d0ye0")
 attack_range = 50.0
-attack_cooldown = 1.0
+attack_cooldown = 1.3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279609929]
 position = Vector2(0, -33)

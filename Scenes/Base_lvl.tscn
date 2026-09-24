@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://drjhxvi3euxri" path="res://Scenes/Goblin.tscn" id="16_rly41"]
 [ext_resource type="PackedScene" uid="uid://bibbsig07s5pb" path="res://Scenes/Resoures/Gold_Drop.tscn" id="17_m2wfk"]
 [ext_resource type="PackedScene" uid="uid://t3pvrrc0361e" path="res://Scenes/Resoures/Wood_Drop.tscn" id="18_m7fv0"]
-[ext_resource type="PackedScene" uid="uid://d2u0wr4wruoax" path="res://Scenes/Resoures/Gold_Small.tscn" id="19_wfdpy"]
 [ext_resource type="PackedScene" uid="uid://cnw34a4kfuo4y" path="res://Scenes/Minion_1.tscn" id="20_7amti"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://Scenes/Player.tscn" id="21_dmogd"]
 [ext_resource type="PackedScene" uid="uid://dtcecksxd0woy" path="res://Scenes/slime_spawner.tscn" id="23_m4uks"]
@@ -864,23 +863,13 @@ position = Vector2(2277, 295)
 
 [node name="SlimeSpawner" parent="Opps" unique_id=1476491033 instance=ExtResource("23_m4uks")]
 position = Vector2(280, 540)
+max_total_spawns = 2
 
 [node name="SlimeSpawner2" parent="Opps" unique_id=262225891 instance=ExtResource("23_m4uks")]
 position = Vector2(295, 226)
+max_total_spawns = 2
 
 [node name="Pickups" type="Area2D" parent="." unique_id=227102525]
-
-[node name="GoldRock" parent="Pickups" unique_id=897547228 instance=ExtResource("19_wfdpy")]
-position = Vector2(-229, 538)
-script = null
-
-[node name="GoldRock3" parent="Pickups" unique_id=1279536256 instance=ExtResource("19_wfdpy")]
-position = Vector2(8, 65)
-script = null
-
-[node name="GoldRock2" parent="Pickups" unique_id=1107787776 instance=ExtResource("19_wfdpy")]
-position = Vector2(1307, 573)
-script = null
 
 [node name="Wood" parent="Pickups" unique_id=1363000235 instance=ExtResource("18_m7fv0")]
 position = Vector2(-220.99998, 154.99998)
@@ -896,6 +885,15 @@ position = Vector2(1784, 226)
 
 [node name="Gold" parent="Pickups" unique_id=947607131 instance=ExtResource("17_m2wfk")]
 position = Vector2(-191, 523)
+
+[node name="Gold5" parent="Pickups" unique_id=2043766789 instance=ExtResource("17_m2wfk")]
+position = Vector2(218, 375.99997)
+
+[node name="Gold6" parent="Pickups" unique_id=759252754 instance=ExtResource("17_m2wfk")]
+position = Vector2(1355, 553)
+
+[node name="Gold7" parent="Pickups" unique_id=1650186173 instance=ExtResource("17_m2wfk")]
+position = Vector2(2171, 354.99997)
 
 [node name="Gold4" parent="Pickups" unique_id=583384327 instance=ExtResource("17_m2wfk")]
 position = Vector2(-28, 89)
@@ -917,6 +915,7 @@ position = Vector2(676.99994, 102)
 possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
 
 [node name="Minion_2" parent="Minions" unique_id=375235389 instance=ExtResource("20_7amti")]
+visible = false
 position = Vector2(-386, 335)
 possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
 
@@ -925,4 +924,4 @@ possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus"
 [node name="Exit" parent="." unique_id=1584259905 instance=ExtResource("25_ljnq7")]
 position = Vector2(2692.9998, 314)
 check_interval = 0.5
-cleared_text = "Proceed tp Level 2"
+cleared_text = "Proceed to Level 2"

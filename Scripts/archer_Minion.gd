@@ -1,19 +1,22 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 120.0
-@export var follow_offset: Vector2 = Vector2(0, 30)   
+@export var move_speed: float = 110.0
+@export var follow_offset: Vector2 = Vector2(0, 30)
 @export var follow_deadzone: float = 10.0
-@export var attack_range: float = 40.0
-@export var attack_cooldown: float = 1.2
+@export var attack_range: float = 160.0
+@export var attack_cooldown: float = 1.6
 @export var strength: int = 2
 @export var max_health: int = 10
-@export var damage_frame: int = 4
+@export var shoot_frame: int = 5
+@export var arrow_scene: PackedScene
+@export var arrow_spawn_offset: Vector2 = Vector2(0, -10)
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
 @onready var attack_timer: Timer = $AttackTimer
 @onready var health_bar: ProgressBar = $ProgressBar
 @onready var name_label: Label = $Name
+
 
 var player: Node2D = null
 var current_health: int
@@ -23,61 +26,68 @@ var attack_target: Node2D = null
 var facing: String = "down"
 var can_attack: bool = true
 var is_attacking: bool = false
-var damage_dealt_this_attack: bool = false
+var arrow_fired_this_attack: bool = false
 var is_dead: bool = false
 @export var possible_names: Array[String] = [
-	"Bingus", "lingus", "Pingus", "Bongus", "Wongus",
-	"Hongus", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus"
-	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus","Flongus","Dongus","Crongus","Le Chonkus","Ur Rightus","Mai Anus"
-	,"NoGuerius"
+	"Darrelt", "WidowWaker", "Karrelt", "Parrelt", "Tarrelt", "Varrelt", "Warrelt", "Zarrelt", 
+	"Farrelt", "Garrelt", "Larvalt", "Jarvalt", "Harvalt", "Barvalt", "Tharrelt", "Warrelt", 
+	"Sir Waltrus the 4th", "Sir Wallelt the 5th", "Charrelt", "Darrelt", "Merrelt", "Sarrelt", "Rarrelius", "Barrelius", "Harrelius", "Gerrelius", "Wherrelius", "Sir Waltimus the 6th", "Sir Waldus the 7th", "Sir Warlert the 8th", "Tiberrelt", 
+	"Grarrelt", "Flarrelt", "Quarrelt", "Vorrelt", "Sorrelt", "Jarrelius", "Tharrelius", "Chorrelt", "Warrelius", "Marrelius", "Sir Walthazar the 9th", 
+	"Sir Waltherelt the 10th","Rarrelt","Barrelt","Larrelt","Jarrelt","Wherelt", "Therrelt", "Sir Waltus the 3rd", "Harrelt", "Chairelt", "Gerrelt", "Evil Walter", "Dr.Walter"
+	
 ]
 
 var minion_name: String = ""
 
+
+
 func _ready() -> void:
 	minion_name = possible_names.pick_random() if possible_names.size() > 0 else ""
-	print(minion_name, " spawned")
 	if name_label:
 		name_label.text = minion_name
-	if minion_name == "Joey":
+	if minion_name == "WidowWaker":
+		strength = 10
+		max_health = 5
+		move_speed = 100
+		attack_cooldown = 3
+		attack_range = 400
+		detection_area.scale *= 1.7
+		name_label.add_theme_color_override("font_color", Color.YELLOW)
+	elif minion_name == "Evil Walter":
+		strength = 5
+		max_health = 1
+		scale *= .7
+		move_speed = 300
+		detection_area.scale *= .7
+		name_label.add_theme_color_override("font_color", Color.YELLOW)
+
+	elif minion_name == "Sir Waltus the 3rd":
 		strength = 1
 		max_health = 30
-		move_speed = 60
-		scale *= 1.6
-		name_label.add_theme_color_override("font_color", Color.YELLOW)
-
-	elif minion_name == "Evil Joey":
-		strength = 100
-		max_health = 2
-		scale *= .5
-		move_speed = 300
-		name_label.add_theme_color_override("font_color", Color.YELLOW)
-
-	elif minion_name == "Le Chonkus":
-		strength = 1
-		max_health = 60
 		scale *= 2
 		move_speed = 0
-		name_label.add_theme_color_override("font_color", Color.YELLOW)
-		
-	elif minion_name == "NoGuerius":
-		strength = 5
-		max_health = 15
-		move_speed = 120
-		attack_cooldown = 3
+		detection_area.scale *= 1.5
+
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
 
+	elif minion_name == "Dr.Walter":
+		strength = 2
+		max_health = 10
+		move_speed = 110
+		attack_cooldown = .7
+		attack_range = 420
+		detection_area.scale *= 2
+		name_label.add_theme_color_override("font_color", Color.YELLOW)
 
-		
-		
 	current_health = max_health
+	
 	_update_health_bar()
 
 	var players := get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
 	else:
-		push_warning("Minion: no node in 'player' group found")
+		push_warning("Archer: no node in 'player' group found")
 
 	detection_area.body_entered.connect(_on_detection_area_body_entered)
 	detection_area.body_exited.connect(_on_detection_area_body_exited)
@@ -93,13 +103,14 @@ func add_gold(amount: int) -> void:
 	if player and player.has_method("add_gold"):
 		player.add_gold(amount)
 	else:
-		push_warning("Minion couldn't find player to give gold to")
+		push_warning("Archer couldn't find player to give gold to")
+
 
 func add_wood(amount: int) -> void:
 	if player and player.has_method("add_wood"):
 		player.add_wood(amount)
 	else:
-		push_warning("Minion couldn't find player to give wood to")
+		push_warning("Archer couldn't find player to give wood to")
 
 
 func _physics_process(_delta: float) -> void:
@@ -164,19 +175,31 @@ func _try_attack() -> void:
 		return
 	can_attack = false
 	is_attacking = true
-	damage_dealt_this_attack = false
+	arrow_fired_this_attack = false
 	attack_target = current_target
 	_play_attack_animation()
 	attack_timer.start()
 
 
 func _on_frame_changed() -> void:
-	if not is_attacking or damage_dealt_this_attack:
+	if not is_attacking or arrow_fired_this_attack:
 		return
-	if anim.frame == damage_frame:
-		damage_dealt_this_attack = true
-		if is_instance_valid(attack_target) and attack_target.has_method("take_damage"):
-			attack_target.take_damage(strength)
+	if anim.frame == shoot_frame:
+		arrow_fired_this_attack = true
+		_fire_arrow()
+
+
+func _fire_arrow() -> void:
+	if arrow_scene == null:
+		push_warning("Archer: no arrow_scene assigned")
+		return
+	if not is_instance_valid(attack_target):
+		return
+
+	var arrow = arrow_scene.instantiate()
+	get_parent().add_child(arrow)
+	var spawn_pos: Vector2 = global_position + arrow_spawn_offset
+	arrow.launch(spawn_pos, attack_target.global_position, strength)
 
 
 func _on_attack_timer_timeout() -> void:
@@ -195,19 +218,8 @@ func _face_direction(direction: Vector2) -> void:
 
 
 func _play_attack_animation() -> void:
-	match facing:
-		"right":
-			anim.flip_h = false
-			anim.play(["Attack_Right_1", "Attack_Right_2"].pick_random())
-		"left":
-			anim.flip_h = true
-			anim.play("Attack_Right_1")
-		"down":
-			anim.flip_h = false
-			anim.play("Attack_Down_1")
-		"up":
-			anim.flip_h = false
-			anim.play(["Attack_Up_1", "Attack_Up_2"].pick_random())
+	anim.flip_h = facing == "left"
+	anim.play("Attack")
 
 
 func _update_animation() -> void:
@@ -215,7 +227,7 @@ func _update_animation() -> void:
 		return
 
 	anim.flip_h = facing == "left"
-	if velocity.length() > 5.0:
+	if velocity.length() > 2.0:
 		anim.play("Walk")
 	else:
 		anim.play("Idle")
@@ -251,15 +263,9 @@ func _update_health_bar() -> void:
 func _death() -> void:
 	set_physics_process(false)
 	detection_area.monitoring = false
-	anim.play("die")
-	await anim.animation_finished
-	queue_free()
-
-func _animate_spawn(minion: Node2D, target_position: Vector2) -> void:
-	minion.scale = Vector2.ZERO
-	minion.modulate.a = 0.0
+	anim.play("Die")
 
 	var tween := create_tween()
-	tween.set_parallel(true)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "modulate:a", 0.0, 0.3)
+	await tween.finished
+	queue_free()

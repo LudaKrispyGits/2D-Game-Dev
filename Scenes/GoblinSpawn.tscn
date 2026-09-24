@@ -17,12 +17,15 @@ bg_color = Color(0.6, 0.079199985, 0.041999996, 1)
 size = Vector2(109, 118)
 
 [node name="Spawner" type="StaticBody2D" unique_id=1522870633 groups=["Spawner", "enemy"]]
+collision_layer = 9
 script = ExtResource("1_yvw3x")
 GoblinSpawn = ExtResource("2_vhfto")
 explosion_scene = ExtResource("3_gg8yf")
 spawn_interval = 6.0
 max_health = 35
 gold_pickup_scene = ExtResource("4_wntbt")
+gold_drop_amount = 5
+wood_drop_amount = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1145184859]
 position = Vector2(0, -53)

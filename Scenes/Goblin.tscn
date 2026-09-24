@@ -362,12 +362,13 @@ radius = 24.083189
 
 [node name="Enemy" type="CharacterBody2D" unique_id=459387554 groups=["enemy"]]
 scale = Vector2(0.555, 0.555)
-collision_layer = 4
+collision_layer = 12
 collision_mask = 7
 script = ExtResource("1_wqigr")
 gold_pickup_scene = ExtResource("2_gjpl2")
 wood_pickup_scene = ExtResource("3_02kj1")
 speed = 60.0
+health = 11.0
 attack_rate = 0.7
 aggo_range = 250.0
 

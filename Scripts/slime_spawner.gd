@@ -55,14 +55,13 @@ func _on_spawn_timer_timeout() -> void:
 	total_spawned += 1
 	slime.tree_exiting.connect(_on_spawn_died.bind(slime))
 
-	var tween := create_tween()
+	var tween := slime.create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(slime, "scale", Vector2.ONE, 0.3)
 
 	if total_spawned >= max_total_spawns:
 		spawn_timer.stop()
-		queue_free()
 		
 func _on_spawn_died(slime: Node2D) -> void:
 	active_spawns.erase(slime)
