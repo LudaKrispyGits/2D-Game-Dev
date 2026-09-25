@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b86qolnrswrbp"]
+
+[ext_resource type="Script" uid="uid://1nlmwppji8wm" path="res://Scripts/winScreen.gd" id="1_qotes"]
+[ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="2_mgkw0"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1291100389]
+script = ExtResource("1_qotes")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=864111668]
+modulate = Color(1, 1, 1, 0.34901962)
+offset_right = 46.666664
+offset_bottom = 46.691174
+scale = Vector2(28.8, 16.32)
+color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+
+[node name="Label" type="Label" parent="." unique_id=951118671]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -119.5
+offset_right = 187.0
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.59955907, 1.4203575, 0.3278082, 1)
+theme_override_fonts/font = ExtResource("2_mgkw0")
+theme_override_font_sizes/font_size = 54
+text = "You Win!"
+
+[node name="Reset" type="Button" parent="." unique_id=1542007932]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.5
+offset_top = -31.99997
+offset_right = 40.5
+offset_bottom = 6.0000305
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.8755405, 1.9070024)
+theme_override_fonts/font = ExtResource("2_mgkw0")
+theme_override_font_sizes/font_size = 16
+text = "Restart Game"

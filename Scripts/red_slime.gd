@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 		anim.play("Idle")
 	elif distance <= aggro_range:
 		velocity = direction.normalized() * move_speed
-		anim.play("Hop")
+		anim.play("Walk")
 	else:
 		velocity = Vector2.ZERO
 		anim.play("Idle")

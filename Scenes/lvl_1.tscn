@@ -1085,7 +1085,6 @@ move_speed = 150.0
 [node name="UI" parent="." unique_id=1111563238 instance=ExtResource("26_uq7le")]
 
 [node name="Opps" type="Area2D" parent="." unique_id=12504843]
-visible = false
 
 [node name="Enemy" parent="Opps" unique_id=459387554 instance=ExtResource("25_gp66y")]
 position = Vector2(490, 147)
@@ -1109,20 +1108,18 @@ position = Vector2(1372, 558)
 position = Vector2(722.00006, 356)
 
 [node name="Spawners" type="Area2D" parent="." unique_id=586748648]
-visible = false
 
 [node name="Spawner2" parent="Spawners" unique_id=435856879 instance=ExtResource("29_6gtrk")]
 position = Vector2(487, 304)
 spawn_interval = 8.0
+max_enemies_on_map = 32
 gold_drop_amount = 3
-wood_pickup_scene = ExtResource("34_htd01")
 wood_drop_amount = 5
 
 [node name="Spawner3" parent="Spawners" unique_id=1522870633 instance=ExtResource("29_6gtrk")]
 position = Vector2(1742, 418)
 spawn_interval = 7.88
 gold_drop_amount = 3
-wood_pickup_scene = ExtResource("34_htd01")
 wood_drop_amount = 5
 
 [node name="Exit" parent="." unique_id=1584259905 instance=ExtResource("30_5hda4")]
@@ -1137,7 +1134,7 @@ cleared_text = "Proceed to Level 3"
 position = Vector2(200, -125)
 
 [node name="Gold10" parent="Pickups" unique_id=1227417337 instance=ExtResource("31_3x20h")]
-position = Vector2(-576, 160)
+position = Vector2(-457.00006, 101.00003)
 scale = Vector2(0.48, 0.48)
 spawn_interval = 25.0
 
@@ -1223,7 +1220,6 @@ position = Vector2(1557, 643)
 texture = ExtResource("37_htd01")
 
 [node name="SlimeSpawner" parent="." unique_id=1476491033 instance=ExtResource("37_83mqd")]
-visible = false
 position = Vector2(855, 290)
 
 [node name="StarterMinions" type="Area2D" parent="." unique_id=768217931]
@@ -1244,11 +1240,11 @@ possible_names = Array[String](["Darrelt", "WidowWaker", "Karrelt", "Parrelt", "
 
 [node name="Minion_1" parent="StarterMinions" unique_id=1130876174 instance=ExtResource("27_61trp")]
 position = Vector2(-262, 139)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}", "Waltus", "Flongus", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus"])
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Embaa", "Slongus", "Jongus", "Pongus", "Joey", "Youngus", "Glongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus"])
 
 [node name="Minion_3" parent="StarterMinions" unique_id=550636731 instance=ExtResource("27_61trp")]
 position = Vector2(-316, 165)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}", "Waltus", "Flongus", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus"])
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Embaa", "Slongus", "Jongus", "Pongus", "Joey", "Youngus", "Glongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus"])
 
 [node name="Protection" parent="StarterMinions" unique_id=985332274 instance=ExtResource("27_61trp")]
 position = Vector2(-182, 108)
@@ -1257,7 +1253,7 @@ move_speed = 0.0
 attack_cooldown = 1.2
 strength = 3
 max_health = 1000000
-possible_names = Array[String](["Guard"])
+possible_names = Array[String](["Gaurd"])
 
 [node name="Protection2" parent="StarterMinions" unique_id=96787931 instance=ExtResource("27_61trp")]
 position = Vector2(-122.000015, 175)
@@ -1266,4 +1262,4 @@ move_speed = 0.0
 attack_cooldown = 1.2
 strength = 3
 max_health = 1000000
-possible_names = Array[String](["Guard"])
+possible_names = Array[String](["Gaurd"])

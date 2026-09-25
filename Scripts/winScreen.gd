@@ -1,9 +1,8 @@
 extends CanvasLayer
 
-@onready var reset_button: Button = $Reset
-@onready var Greset: Button = $GReset
 @export var first_scene_path: String = "res://Scenes/Base_lvl.tscn"
 
+@onready var reset_button: Button = $Reset
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -11,11 +10,6 @@ func _ready() -> void:
 
 
 func _on_reset_pressed() -> void:
-	GameManager.reset()
-	get_tree().reload_current_scene()
-	queue_free()
-	
-func _on_Greset_pressed() -> void:
 	GameManager.reset()
 	get_tree().change_scene_to_file(first_scene_path)
 	queue_free()

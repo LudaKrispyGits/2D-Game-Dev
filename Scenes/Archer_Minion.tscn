@@ -269,9 +269,11 @@ collision_layer = 12
 collision_mask = 5
 script = ExtResource("1_srbr6")
 follow_offset = Vector2(0, 40)
+attack_range = 220.0
 attack_cooldown = 1.4
 max_health = 11
 arrow_scene = ExtResource("2_l7wuk")
+possible_names = Array[String](["WidowWaker", "Karrelt", "Tarrelt", "Hawkeye", "Farrelt", "Garrelt", "Larvalt", "Jarvalt", "Harvalt", "Barvalt", "Tharrelt", "Warrelt", "Sir Waltrus the 4th", "Sir Wallelt the 5th", "Charrelt", "Darrelt", "Rarrelius", "Barrelius", "Harrelius", "Sir Waltimus the 6th", "Sir Waldus the 7th", "Sir Warlert the 8th", "Grarrelt", "Flarrelt", "Quarrelt", "Vorrelt", "Sorrelt", "Jarrelius", "Tharrelius", "Chorrelt", "Sir Walthazar the 9th", "Sir Waltherelt the 10th", "Rarrelt", "Barrelt", "Jarrelt", "Sir Waltus the 3rd", "Harrelt", "Evil Walter", "Dr.Walter"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1882858890]
 position = Vector2(0, -33)

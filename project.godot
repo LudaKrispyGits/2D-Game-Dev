@@ -21,6 +21,9 @@ GameManager="*uid://4ejpebdg1wdk"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -80,3 +83,4 @@ Attack={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 viewport/hdr_2d=true
+2d/snap/snap_2d_transforms_to_pixel=true

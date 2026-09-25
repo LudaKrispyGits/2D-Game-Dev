@@ -32,7 +32,7 @@ var is_attacking: bool = false
 var arrow_fired_this_attack: bool = false
 var is_dead: bool = false
 @export var possible_names: Array[String] = [
-	"Darrelt", "WidowWaker", "Karrelt", "Parrelt", "Tarrelt", "Varrelt", "Warrelt", "Zarrelt", 
+	"Darrelt", "WidowWaker", "Karrelt", "Parrelt", "Tarrelt", "Hawkeye", "Warrelt", "Zarrelt", 
 	"Farrelt", "Garrelt", "Larvalt", "Jarvalt", "Harvalt", "Barvalt", "Tharrelt", "Warrelt", 
 	"Sir Waltrus the 4th", "Sir Wallelt the 5th", "Charrelt", "Darrelt", "Merrelt", "Sarrelt", "Rarrelius", "Barrelius", "Harrelius", "Gerrelius", "Wherrelius", "Sir Waltimus the 6th", "Sir Waldus the 7th", "Sir Warlert the 8th", "Tiberrelt", 
 	"Grarrelt", "Flarrelt", "Quarrelt", "Vorrelt", "Sorrelt", "Jarrelius", "Tharrelius", "Chorrelt", "Warrelius", "Marrelius", "Sir Walthazar the 9th", 
@@ -58,17 +58,25 @@ func _ready() -> void:
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
 	elif minion_name == "Evil Walter":
 		strength = 5
-		max_health = 1
+		max_health = 2
 		scale *= .7
 		move_speed = 300
 		detection_area.scale *= .7
+		name_label.add_theme_color_override("font_color", Color.YELLOW)
+		
+	elif minion_name == "Hawkeye":
+		strength = 7
+		max_health = 33
+		scale *= 1.3
+		move_speed = 200
+		detection_area.scale *= 10
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
 
 	elif minion_name == "Sir Waltus the 3rd":
 		strength = 1
 		max_health = 30
 		scale *= 2
-		move_speed = 0
+		move_speed = 10
 		detection_area.scale *= 1.5
 
 		name_label.add_theme_color_override("font_color", Color.YELLOW)

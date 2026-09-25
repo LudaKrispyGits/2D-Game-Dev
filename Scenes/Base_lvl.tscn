@@ -906,15 +906,15 @@ position = Vector2(575, 93)
 
 [node name="Minion_1" parent="Minions" unique_id=1130876174 instance=ExtResource("20_7amti")]
 position = Vector2(576, 368.99997)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Embaa", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus", "Flongus", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus", "NoGuerius"])
 
 [node name="Minion_3" parent="Minions" unique_id=1040818214 instance=ExtResource("20_7amti")]
 position = Vector2(676.99994, 102)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Embaa", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}", "Waltus", "Flongus", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus", "NoGuerius"])
 
 [node name="Minion_2" parent="Minions" unique_id=375235389 instance=ExtResource("20_7amti")]
 position = Vector2(-386, 335)
-possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
+possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Embaa", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus", "Flongus", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus", "NoGuerius"])
 
 [node name="UI" parent="." unique_id=1111563238 instance=ExtResource("24_m4uks")]
 

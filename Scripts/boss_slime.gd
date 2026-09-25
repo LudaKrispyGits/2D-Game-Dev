@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-@export var health: int = 8
+@export var rainbow_cycle_speed: float = 0.3 
+@export var health: int = 150
 @export var move_speed: float = 60.0
-@export var aggro_range: float = 250.0
+@export var aggro_range: float = 550.0
 @export var attack_range: float = 30.0
-@export var contact_knockback_force: float = 300.0
-@export var contact_damage: int = 1
+@export var contact_knockback_force: float = 400.0
+@export var contact_damage: int = 2
+var rainbow_hue: float = 0.0
 #@export var wood_pickup_scene: PackedScene
 #@export var gold_pickup_scene: PackedScene
 
@@ -32,7 +34,12 @@ func _ready() -> void:
 		player = players[0]
 
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
-
+	
+func _process(delta: float) -> void:
+	if is_dead:
+		return
+	rainbow_hue = fmod(rainbow_hue + rainbow_cycle_speed * delta, 1.0)
+	anim.modulate = Color.from_hsv(rainbow_hue, 1.0, 1.0)
 
 func _physics_process(delta: float) -> void:
 	if is_knocked_back:
@@ -70,7 +77,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	print("Slime hitbox touched: ", body.name, " | in player group: ", body.is_in_group("player"), " | has take_damage: ", body.has_method("take_damage"))
 
 	if not body.is_in_group("player"):
 		return
@@ -83,9 +89,6 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		print("Calling take_damage on player")
 		body.take_damage(contact_damage)
 
-func apply_knockback(direction: Vector2, force: float) -> void:
-	is_knocked_back = true
-	knockback_velocity = direction.normalized() * force
 
 
 func take_damage(amount: int) -> void:

@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var damage_frame: int = 4
 
 @onready var death: AudioStreamPlayer2D = $Die
-
+var has_revived: bool = false
 @onready var sword: AudioStreamPlayer2D = $Sound
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
@@ -32,7 +32,7 @@ var is_dead: bool = false
 	"Bingus", "lingus", "Pingus", "Bongus", "Wongus",
 	"Embaa", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus"
 	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus","Flongus","Dongus","Crongus","Le Chonkus","Ur Rightus","Mai Anus"
-	,"NoGuerius"
+	,"NoGuerius", "Big Raga"
 ]
 
 var minion_name: String = ""
@@ -54,6 +54,7 @@ func _ready() -> void:
 		strength = 100
 		max_health = 2
 		scale *= .5
+		name_label.scale *= 2
 		move_speed = 300
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
 
@@ -61,7 +62,7 @@ func _ready() -> void:
 		strength = 1
 		max_health = 60
 		scale *= 2
-		move_speed = 0
+		move_speed = 10
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
 		
 	elif minion_name == "NoGuerius":
@@ -74,7 +75,14 @@ func _ready() -> void:
 		strength = 5
 		max_health = 15
 		move_speed = 120
-		attack_cooldown = .5
+		attack_cooldown = .3
+		name_label.add_theme_color_override("font_color", Color.YELLOW)
+	elif minion_name == "Big Raga":
+		strength = 4
+		max_health = 25
+		move_speed = 30
+		scale *= 3 
+		attack_cooldown = 1
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
 
 
@@ -251,10 +259,23 @@ func take_damage(amount: int) -> void:
 		return
 	current_health = max(current_health - amount, 0)
 	_update_health_bar()
+	
 	if current_health <= 0:
-		is_dead = true
-		_death()
+		if minion_name == "Big Raga" and not has_revived:
+			_revive()
+		else:
+			is_dead = true
+			_death()
+			
+func _revive() -> void:
+	has_revived = true
+	current_health = max_health
+	_update_health_bar()
 
+	var tween := create_tween()
+	tween.set_loops(3)
+	tween.tween_property(anim, "modulate", Color(1, 1, 0.4), 0.15)
+	tween.tween_property(anim, "modulate", Color.WHITE, 0.15)
 
 func _update_health_bar() -> void:
 	if health_bar:

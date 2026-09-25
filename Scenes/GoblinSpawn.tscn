@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bi2dl74itq3wu" path="res://Scenes/explosions.tscn" id="3_gg8yf"]
 [ext_resource type="PackedScene" uid="uid://bibbsig07s5pb" path="res://Scenes/Resoures/Gold_Drop.tscn" id="4_wntbt"]
 [ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="5_0jiik"]
+[ext_resource type="PackedScene" uid="uid://t3pvrrc0361e" path="res://Scenes/Resoures/Wood_Drop.tscn" id="5_3an1v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02kj1"]
 radius = 33.06055
@@ -16,15 +17,17 @@ bg_color = Color(0.6, 0.079199985, 0.041999996, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(109, 118)
 
-[node name="Spawner" type="StaticBody2D" unique_id=1522870633 groups=["Spawner", "enemy"]]
+[node name="Spawner" type="StaticBody2D" unique_id=1522870633 groups=["enemy"]]
 collision_layer = 9
 script = ExtResource("1_yvw3x")
 GoblinSpawn = ExtResource("2_vhfto")
 explosion_scene = ExtResource("3_gg8yf")
 spawn_interval = 6.0
+max_enemies_on_map = 48
 max_health = 35
 gold_pickup_scene = ExtResource("4_wntbt")
 gold_drop_amount = 5
+wood_pickup_scene = ExtResource("5_3an1v")
 wood_drop_amount = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1145184859]
@@ -52,6 +55,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_0jiik")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/background = SubResource("StyleBoxFlat_gg8yf")
+metadata/_edit_use_anchors_ = true
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1707963753]
 collision_layer = 5

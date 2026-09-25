@@ -13,10 +13,13 @@ extends StaticBody2D
 @export var max_health: int = 30
 
 @export var gold_pickup_scene: PackedScene
-@export var gold_drop_amount: int = 4
+@export var gold_drop_amount: int = 10
 
 @export var wood_pickup_scene: PackedScene
-@export var wood_drop_amount: int = 7
+@export var wood_drop_amount: int = 10
+
+@export var trigger_radius: float = 600.0
+@export var trigger_check_interval: float = 0.5
 
 @onready var spawn_timer: Timer = $Timer
 @onready var hurtbox: Area2D = $Hurtbox
@@ -24,16 +27,48 @@ extends StaticBody2D
 
 var current_health: int
 var is_destroyed: bool = false
+var is_activated: bool = false
+var player: Node2D = null
 
 
 func _ready() -> void:
 	current_health = max_health
 	_update_health_bar()
+	hurtbox.monitorable = false
 
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.one_shot = false
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
+	# Timer is NOT started yet — waits for player to enter trigger_radius
+
+	var players := get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
+
+	var trigger_timer := Timer.new()
+	trigger_timer.wait_time = trigger_check_interval
+	trigger_timer.one_shot = false
+	add_child(trigger_timer)
+	trigger_timer.timeout.connect(_check_trigger)
+	trigger_timer.start()
+
+
+func _check_trigger() -> void:
+	if is_activated or is_destroyed:
+		return
+	if player == null or not is_instance_valid(player):
+		return
+
+	var distance: float = global_position.distance_to(player.global_position)
+	if distance <= trigger_radius:
+		_activate()
+
+
+func _activate() -> void:
+	is_activated = true
+	hurtbox.monitorable = true
 	spawn_timer.start()
+	_on_spawn_timer_timeout()  # spawn the first one immediately on activation
 
 
 func _on_spawn_timer_timeout() -> void:
@@ -61,7 +96,7 @@ func _animate_spawn(enemy: Node2D, target_position: Vector2) -> void:
 	enemy.scale = Vector2.ZERO
 	enemy.modulate.a = 0.0
 
-	var tween := create_tween()
+	var tween := enemy.create_tween()
 	tween.set_parallel(true)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
@@ -72,7 +107,7 @@ func _animate_spawn(enemy: Node2D, target_position: Vector2) -> void:
 
 
 func take_damage(amount: int) -> void:
-	if is_destroyed:
+	if is_destroyed or not is_activated:
 		return
 	current_health = max(current_health - amount, 0)
 	_update_health_bar()

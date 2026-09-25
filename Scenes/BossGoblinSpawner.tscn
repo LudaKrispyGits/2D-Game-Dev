@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cf8xhsi8vt8rw"]
+
+[ext_resource type="PackedScene" uid="uid://bpttyixucfllf" path="res://Scenes/GoblinSpawn.tscn" id="1_m5re4"]
+[ext_resource type="Script" uid="uid://dxcy2rdqqpj00" path="res://Scripts/Boss_Goblin_Spawner.gd" id="2_suxtw"]
+
+[node name="Node2D" type="CharacterBody2D" unique_id=1685338809]
+
+[node name="Spawner" parent="." unique_id=1522870633 instance=ExtResource("1_m5re4")]
+script = ExtResource("2_suxtw")
+spawn_interval = 7.0
+max_enemies_on_map = 40
+max_health = 30
+gold_drop_amount = 10
+wood_drop_amount = 10
+trigger_radius = 600.0
+trigger_check_interval = 0.5
