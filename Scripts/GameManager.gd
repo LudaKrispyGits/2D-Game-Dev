@@ -24,3 +24,8 @@ func spend_resources(gold_cost: int, wood_cost: int) -> bool:
 	wood -= wood_cost
 	resources_changed.emit(gold, wood)
 	return true
+
+func reset() -> void:
+	gold = gold
+	wood = wood
+	resources_changed.emit(gold, wood)

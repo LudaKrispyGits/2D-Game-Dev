@@ -4,9 +4,10 @@ extends VBoxContainer
 @export var explosion_scene: PackedScene
 @export var gold_cost: int = 2
 @export var wood_cost: int = 2
-@export var spawn_radius: float = 40.0
+@export var spawn_radius: float = 25.0
 @export var min_spawn_radius: float = 20.0
 @export var minion_spawn_offset: Vector2 = Vector2(0, 40)
+@onready var spawn: AudioStreamPlayer2D = $Spawn
 
 @onready var gold_cost_label: Label = $CostRow/GoldCostLabel
 @onready var wood_cost_label: Label = $CostRow/WoodCostLabel
@@ -50,6 +51,7 @@ func _on_buy_pressed() -> void:
 	if explosion_scene:
 		var explosion = explosion_scene.instantiate()
 		get_tree().current_scene.add_child(explosion)
+		spawn.play()
 		explosion.global_position = spawn_position
 
 

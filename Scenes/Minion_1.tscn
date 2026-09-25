@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://b3ps0dif8blfk" path="res://Scripts/minion_1.gd" id="1_d0ye0"]
 [ext_resource type="Texture2D" uid="uid://bhqmmfdjp64s7" path="res://Tiny Swords (Free Pack)/Factions/Knights/Troops/Dead/Dead.png" id="3_ehlp2"]
 [ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="4_vxl4h"]
+[ext_resource type="AudioStream" uid="uid://cfi22yno7ec3k" path="res://Imported from other/Assets/Sounds/sword_slice.wav" id="5_86r1d"]
+[ext_resource type="AudioStream" uid="uid://dobceycmx8jxp" path="res://Imported from other/Assets/Sounds/splat_quick.wav" id="6_kdjjv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qvny"]
 atlas = ExtResource("1_0qvny")
@@ -574,3 +576,9 @@ text = "Name Here"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=1383412595]
+stream = ExtResource("5_86r1d")
+volume_db = -12.636
+
+[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=508994142]
+stream = ExtResource("6_kdjjv")
+volume_db = -9.72

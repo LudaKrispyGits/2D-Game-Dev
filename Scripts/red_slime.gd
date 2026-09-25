@@ -8,6 +8,7 @@ extends CharacterBody2D
 #@export var wood_pickup_scene: PackedScene
 #@export var gold_pickup_scene: PackedScene
 
+@onready var death: AudioStreamPlayer2D = $Die
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var health_bar: ProgressBar = $ProgressBar
@@ -97,7 +98,7 @@ func _death() -> void:
 	set_physics_process(false)
 	hitbox.monitorable = false
 	hitbox.monitoring = false
-
+	death.play()
 	#var pickup_scene: PackedScene
 	#if randf() < 0.6:
 		#pickup_scene = wood_pickup_scene

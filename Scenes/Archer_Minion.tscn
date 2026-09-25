@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bhqmmfdjp64s7" path="res://Tiny Swords (Free Pack)/Factions/Knights/Troops/Dead/Dead.png" id="4_l7wuk"]
 [ext_resource type="Texture2D" uid="uid://02hk5iosdjjk" path="res://Tiny Swords (Free Pack)/Units/Purple Units/Archer/Archer_Run.png" id="4_uewiv"]
 [ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="5_xfmhp"]
+[ext_resource type="AudioStream" uid="uid://dobceycmx8jxp" path="res://Imported from other/Assets/Sounds/splat_quick.wav" id="8_uewiv"]
+[ext_resource type="AudioStream" uid="uid://dihmh765ngcpo" path="res://Imported from other/Assets/Sounds/swipe.wav" id="9_xfmhp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lwq7t"]
 atlas = ExtResource("2_ch8dl")
@@ -321,3 +323,12 @@ theme_override_constants/shadow_outline_size = -58
 theme_override_fonts/font = ExtResource("5_xfmhp")
 text = "Name Here"
 metadata/_edit_use_anchors_ = true
+
+[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=810933919]
+stream = ExtResource("8_uewiv")
+volume_db = -9.72
+max_distance = 728.0
+
+[node name="Loose Arrow" type="AudioStreamPlayer2D" parent="." unique_id=52909421]
+stream = ExtResource("9_xfmhp")
+volume_db = -8.748

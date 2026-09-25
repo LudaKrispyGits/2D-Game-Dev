@@ -5,9 +5,12 @@ extends CharacterBody2D
 @export var aggro_range: float = 250.0
 @export var attack_range: float = 30.0
 @export var contact_knockback_force: float = 300.0
+@export var contact_damage: int = 1
 #@export var wood_pickup_scene: PackedScene
 #@export var gold_pickup_scene: PackedScene
 
+
+@onready var death: AudioStreamPlayer2D = $Die
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var health_bar: ProgressBar = $ProgressBar
@@ -67,10 +70,18 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and body.has_method("apply_knockback"):
+	print("Slime hitbox touched: ", body.name, " | in player group: ", body.is_in_group("player"), " | has take_damage: ", body.has_method("take_damage"))
+
+	if not body.is_in_group("player"):
+		return
+
+	if body.has_method("apply_knockback"):
 		var direction: Vector2 = (body.global_position - global_position).normalized()
 		body.apply_knockback(direction, contact_knockback_force)
 
+	if body.has_method("take_damage"):
+		print("Calling take_damage on player")
+		body.take_damage(contact_damage)
 
 func apply_knockback(direction: Vector2, force: float) -> void:
 	is_knocked_back = true
@@ -97,6 +108,7 @@ func _death() -> void:
 	set_physics_process(false)
 	hitbox.monitorable = false
 	hitbox.monitoring = false
+	death.play()
 
 	#var pickup_scene: PackedScene
 	#if randf() < 0.6:

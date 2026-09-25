@@ -11,6 +11,9 @@ extends CharacterBody2D
 @export var arrow_scene: PackedScene
 @export var arrow_spawn_offset: Vector2 = Vector2(0, -10)
 
+@onready var death: AudioStreamPlayer2D = $Die
+@onready var loose_arrow: AudioStreamPlayer2D = $"Loose Arrow"
+
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
 @onready var attack_timer: Timer = $AttackTimer
@@ -199,6 +202,7 @@ func _fire_arrow() -> void:
 	var arrow = arrow_scene.instantiate()
 	get_parent().add_child(arrow)
 	var spawn_pos: Vector2 = global_position + arrow_spawn_offset
+	loose_arrow.play()
 	arrow.launch(spawn_pos, attack_target.global_position, strength)
 
 
@@ -264,6 +268,7 @@ func _death() -> void:
 	set_physics_process(false)
 	detection_area.monitoring = false
 	anim.play("Die")
+	death.play()
 
 	var tween := create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 0.3)

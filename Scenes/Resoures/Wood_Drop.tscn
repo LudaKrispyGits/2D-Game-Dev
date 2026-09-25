@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://kqlyu780iujk" path="res://Scripts/wood_drop.gd" id="1_10dbf"]
 [ext_resource type="Texture2D" uid="uid://d8jh70ji5v3w" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Wood/Wood Resource/Wood Resource.png" id="1_377tw"]
+[ext_resource type="AudioStream" uid="uid://vbmm4img5yw0" path="res://Imported from other/Assets/Sounds/wood_small_pickup.wav" id="3_8e67g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 24.186773
@@ -17,3 +18,7 @@ texture = ExtResource("1_377tw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=445848170]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="PickUp" type="AudioStreamPlayer2D" parent="." unique_id=1671846]
+stream = ExtResource("3_8e67g")
+volume_db = -7.776

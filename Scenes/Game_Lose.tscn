@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://djrnkoif3bkg7"]
+
+[ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="1_hihvq"]
+[ext_resource type="Script" uid="uid://cso1w8uh3gusl" path="res://Scripts/game_lose.gd" id="1_ye3oh"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=1548166471]
+script = ExtResource("1_ye3oh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1130900405]
+modulate = Color(1, 1, 1, 0.34901962)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8, 16.32)
+color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+
+[node name="Label" type="Label" parent="." unique_id=451769070]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -125.5
+offset_right = 39.0
+offset_bottom = -102.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_hihvq")
+theme_override_font_sizes/font_size = 54
+text = "You Died!"
+
+[node name="Reset" type="Button" parent="." unique_id=1360654203]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 8.0
+offset_right = -4.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.8755405, 1.9070024)
+theme_override_fonts/font = ExtResource("1_hihvq")
+theme_override_font_sizes/font_size = 16
+text = "Restart Level"

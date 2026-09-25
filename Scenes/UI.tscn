@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bi2dl74itq3wu" path="res://Scenes/explosions.tscn" id="6_mg6lk"]
 [ext_resource type="Script" uid="uid://v1x6vskffmif" path="res://Scripts/buy_button.gd" id="7_xjg7p"]
 [ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="8_wunin"]
+[ext_resource type="AudioStream" uid="uid://cn6iupl3fc5x" path="res://Imported from other/Assets/Sounds/explosion_small.wav" id="10_b1goy"]
 [ext_resource type="PackedScene" uid="uid://cpx585xe7t74o" path="res://Scenes/Archer_Minion.tscn" id="10_j04uc"]
 [ext_resource type="Texture2D" uid="uid://txol84mjji2d" path="res://Screenshot 2026-09-23 221657.png" id="11_vqx31"]
 
@@ -84,6 +85,7 @@ texture = ExtResource("1_w371h")
 
 [node name="GoldCostLabel" type="Label" parent="Store/Minioncards/CostRow" unique_id=1310462388]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "5"
 
 [node name="WoodCostIcon" type="TextureRect" parent="Store/Minioncards/CostRow" unique_id=1287178012]
@@ -94,6 +96,7 @@ stretch_mode = 3
 
 [node name="WoodCostLabel" type="Label" parent="Store/Minioncards/CostRow" unique_id=65934194]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "10
 "
 horizontal_alignment = 1
@@ -108,6 +111,10 @@ theme_override_fonts/font = ExtResource("8_wunin")
 theme_override_font_sizes/font_size = 33
 text = "Hire Knight."
 script = ExtResource("7_xjg7p")
+
+[node name="Spawn" type="AudioStreamPlayer2D" parent="Store/Minioncards" unique_id=155826315]
+stream = ExtResource("10_b1goy")
+volume_db = -9.72
 
 [node name="Minioncards_bow" type="VBoxContainer" parent="Store" unique_id=2089121683]
 layout_mode = 2
@@ -135,6 +142,7 @@ texture = ExtResource("1_w371h")
 
 [node name="GoldCostLabel" type="Label" parent="Store/Minioncards_bow/CostRow" unique_id=1707485135]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "5"
 
 [node name="WoodCostIcon" type="TextureRect" parent="Store/Minioncards_bow/CostRow" unique_id=777357483]
@@ -145,6 +153,7 @@ stretch_mode = 3
 
 [node name="WoodCostLabel" type="Label" parent="Store/Minioncards_bow/CostRow" unique_id=804217936]
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "10
 "
 horizontal_alignment = 1
@@ -158,3 +167,7 @@ theme_override_fonts/font = ExtResource("8_wunin")
 theme_override_font_sizes/font_size = 36
 text = "Hire Archer."
 script = ExtResource("7_xjg7p")
+
+[node name="Spawn" type="AudioStreamPlayer2D" parent="Store/Minioncards_bow" unique_id=1261768025]
+stream = ExtResource("10_b1goy")
+volume_db = -10.0

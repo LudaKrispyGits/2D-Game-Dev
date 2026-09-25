@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j172f1ad1bm4" path="res://Scripts/gold_drop.gd" id="1_0yvi7"]
 [ext_resource type="Texture2D" uid="uid://bfjsnlkt503fc" path="res://Tiny Swords (Free Pack)/Terrain/Resources/Gold/Gold Resource/Gold_Resource_Highlight.png" id="1_gl2ex"]
+[ext_resource type="AudioStream" uid="uid://8wsv6g3pjdel" path="res://Imported from other/Assets/Sounds/coin_jingle_small.wav" id="3_x5kmj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0yvi7"]
 atlas = ExtResource("1_gl2ex")
@@ -48,7 +49,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dm3pq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
@@ -71,3 +72,7 @@ frame_progress = 0.789386
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1569170907]
 position = Vector2(-1, -3)
 shape = SubResource("CircleShape2D_qeexe")
+
+[node name="PickUp" type="AudioStreamPlayer2D" parent="." unique_id=1343522737]
+stream = ExtResource("3_x5kmj")
+volume_db = -7.776

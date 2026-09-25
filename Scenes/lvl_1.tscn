@@ -1044,7 +1044,7 @@ tile_set = SubResource("TileSet_0eu5p")
 
 [node name="Plateau" type="TileMapLayer" parent="MAP/NavigationRegion2D" unique_id=1326321281]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJAAIAAAAGAAUAAAAKAAIAAAAGAAUAAAALAAIAAAAGAAUAAAAMAAIAAAAHAAUAAAAJAAEAAAAGAAIAAAAKAAEAAAAGAAIAAAALAAEAAAAGAAIAAAAMAAEAAgAHAAIAAAAJAAAAAgAGAAAAAAAKAAAAAgAGAAAAAAALAAAAAgAGAAAAAAAMAAAAAgAHAAAAAAAIAAIAAAAFAAQAAAAIAAAAAgAGAAAAAAAIAAEAAgAFAAIAAAAOAAQAAAAFAAUAAAAPAAQAAAAHAAUAAAAPAAUAAAAIAAMAAAAPAAYAAAAIAAUAAAAOAAMAAAAFAAMAAAAPAAMAAAAHAAMAAAAIAA0AAAAFAAUAAAAJAA0AAAAGAAUAAAAKAA0AAAAGAAUAAAALAA0AAAAGAAUAAAAMAA0AAAAGAAUAAAANAA0AAAAGAAUAAAAJAAwAAAAGAAIAAAAKAAwAAAAGAAIAAAALAAwAAQAGAAEAAAAMAAwAAQAGAAEAAAANAAwAAQAGAAEAAAAOAAwAAAAHAAIAAAAOAA0AAAAHAAUAAAAPAAwAAAAFAAUAAAAOAAsAAAAGAAEAAAAPAAsAAAAGAAIAAAAQAAsAAAAGAAIAAAARAAsAAAAHAAIAAAAQAAwAAAAGAAUAAAARAAwAAAAHAAUAAAANAAsAAQAGAAEAAAAEAP//AAAHAAUAAAADAP//AAAGAAUAAAACAP//AAAGAAUAAAADAP3/AAAGAAEAAAADAP7/AAAGAAIAAAACAP7/AAAGAAIAAAACAP3/AAAGAAEAAAACAPz/AQAGAAEAAAADAPz/AQAGAAEAAAAEAPz/AQAGAAEAAAABAP7/AgAFAAIAAAABAP3/AAAGAAEAAAABAPz/AAAGAAEAAAABAP//AAAFAAUAAAADAAoAAgAFAAMAAAADAAsAAAAFAAUAAAAEAAsAAAAGAAUAAAAFAAsAAAAHAAUAAAANAAoAAgAGAAAAAAAOAAoAAgAGAAAAAAAPAAoAAgAGAAAAAAAQAAoAAgAGAAAAAAAMAAoAAgAGAAAAAAAMAAsAAQAGAAEAAAAKAAsAAAAGAAEAAAALAAsAAQAGAAEAAAALAAoAAgAGAAAAAAAKAAoAAgAGAAAAAAAJAAoAAgAGAAAAAAAJAAsAAAAGAAEAAAAIAAsAAAAFAAEAAAAIAAoAAgAFAAAAAAAUAAoAAAAIAAUAAAAUAAkAAAAIAAMAAAD8/wYAAAAFAAEAAAD9/wYAAgAHAAEAAAD+/wYAAAAFAAQAAAD//wYAAAAHAAQAAAD8/wkAAAAFAAQAAAD9/wkAAAAGAAQAAAD+/wkAAAAGAAQAAAD//wkAAAAHAAQAAAD8/wgAAgAFAAIAAAD9/wgAAgAGAAIAAAD+/wgAAgAGAAIAAAD//wgAAgAHAAIAAAD8/wUAAAAFAAEAAAD9/wUAAAAGAAEAAAD+/wUAAgAGAAIAAAD//wUAAgAGAAIAAAD//wQAAgAHAAAAAAD+/wQAAgAGAAAAAAD8/wcAAAAFAAEAAAD9/wcAAAAGAAEAAAD9/wQAAQAGAAEAAAD8/wQAAQAGAAEAAAABAPv/AgAGAAAAAAAAAPv/AgAFAAAAAAAAAPz/BAAGAAEAAAAAAP3/AgAFAAIAAAACAPv/AQAGAAEAAAAAAP7/AAAIAAQAAAD+/wcAAgAGAAAAAAD//wcAAgAHAAAAAAAEAP7/AgAGAAIAAAAEAP3/AgAHAAEAAAARAAoAAgAHAAAAAAAIAAwAAgAGAAIAAAAFAAoAAgAGAAMAAAAEAAoAAgAGAAMAAAA=")
+tile_map_data = PackedByteArray("AAAJAAIAAAAGAAUAAAAKAAIAAAAGAAUAAAALAAIAAAAGAAUAAAAMAAIAAAAHAAUAAAAJAAEAAAAGAAIAAAAKAAEAAAAGAAIAAAALAAEAAAAGAAIAAAAMAAEAAgAHAAIAAAAJAAAAAgAGAAAAAAAKAAAAAgAGAAAAAAALAAAAAgAGAAAAAAAMAAAAAgAHAAAAAAAIAAIAAAAFAAQAAAAIAAAAAgAGAAAAAAAIAAEAAgAFAAIAAAAOAAQAAAAFAAUAAAAPAAQAAAAHAAUAAAAPAAUAAAAIAAMAAAAPAAYAAAAIAAUAAAAOAAMAAAAFAAMAAAAPAAMAAAAHAAMAAAAIAA0AAAAFAAUAAAAJAA0AAAAGAAUAAAAKAA0AAAAGAAUAAAALAA0AAAAGAAUAAAAMAA0AAAAGAAUAAAANAA0AAAAGAAUAAAAJAAwAAAAGAAIAAAAKAAwAAAAGAAIAAAALAAwAAgAGAAIAAAAMAAwAAgAGAAIAAAANAAwAAgAGAAIAAAAOAAwAAgAHAAIAAAAOAA0AAAAHAAUAAAAPAAwAAAAFAAUAAAAOAAsAAAAGAAEAAAAPAAsAAAAGAAIAAAAQAAsAAAAGAAIAAAARAAsAAgAHAAIAAAAQAAwAAAAGAAUAAAARAAwAAAAHAAUAAAANAAsAAgAGAAEAAAAEAP//AAAHAAUAAAADAP//AAAGAAUAAAACAP//AAAGAAUAAAADAP3/AAAGAAEAAAADAP7/AAAGAAIAAAACAP7/AAAGAAIAAAACAP3/AAAGAAEAAAACAPz/AQAGAAEAAAADAPz/AQAGAAEAAAAEAPz/AQAGAAEAAAABAP7/AgAFAAIAAAABAP3/AAAGAAEAAAABAPz/AAAGAAEAAAABAP//AAAFAAUAAAADAAoAAgAFAAMAAAADAAsAAAAFAAUAAAAEAAsAAAAGAAUAAAAFAAsAAAAHAAUAAAANAAoAAgAGAAAAAAAOAAoAAgAGAAAAAAAPAAoAAgAGAAAAAAAQAAoAAgAGAAAAAAAMAAoAAgAGAAAAAAAMAAsABAAGAAEAAAAKAAsABAAGAAEAAAALAAsABAAGAAEAAAALAAoAAgAGAAAAAAAKAAoAAgAGAAAAAAAJAAoAAgAGAAAAAAAJAAsAAAAGAAEAAAAIAAsAAAAFAAEAAAAIAAoAAgAFAAAAAAAUAAoAAAAIAAUAAAAUAAkAAAAIAAMAAAD8/wYAAAAFAAEAAAD9/wYAAgAHAAEAAAD+/wYAAAAFAAQAAAD//wYAAAAHAAQAAAD8/wkAAAAFAAQAAAD9/wkAAAAGAAQAAAD+/wkAAAAGAAQAAAD//wkAAAAHAAQAAAD8/wgAAgAFAAIAAAD9/wgAAgAGAAIAAAD+/wgAAgAGAAIAAAD//wgAAgAHAAIAAAD8/wUAAAAFAAEAAAD9/wUAAAAGAAEAAAD+/wUAAgAGAAIAAAD//wUAAgAGAAIAAAD//wQAAgAHAAAAAAD+/wQAAgAGAAAAAAD8/wcAAAAFAAEAAAD9/wcAAAAGAAEAAAD9/wQAAQAGAAEAAAD8/wQAAQAGAAEAAAABAPv/AgAGAAAAAAAAAPv/AgAFAAAAAAAAAPz/BAAGAAEAAAAAAP3/AgAFAAIAAAACAPv/AQAGAAEAAAAAAP7/AAAIAAQAAAD+/wcAAgAGAAAAAAD//wcAAgAHAAAAAAAEAP7/AgAGAAIAAAAEAP3/AgAHAAEAAAARAAoAAgAGAAAAAAAIAAwAAgAGAAIAAAAFAAoAAgAGAAMAAAAEAAoAAgAGAAMAAAA=")
 tile_set = SubResource("TileSet_qw01e")
 
 [node name="Stairs" type="TileMapLayer" parent="MAP/NavigationRegion2D" unique_id=1482103319]
@@ -1085,6 +1085,7 @@ move_speed = 150.0
 [node name="UI" parent="." unique_id=1111563238 instance=ExtResource("26_uq7le")]
 
 [node name="Opps" type="Area2D" parent="." unique_id=12504843]
+visible = false
 
 [node name="Enemy" parent="Opps" unique_id=459387554 instance=ExtResource("25_gp66y")]
 position = Vector2(490, 147)
@@ -1108,6 +1109,7 @@ position = Vector2(1372, 558)
 position = Vector2(722.00006, 356)
 
 [node name="Spawners" type="Area2D" parent="." unique_id=586748648]
+visible = false
 
 [node name="Spawner2" parent="Spawners" unique_id=435856879 instance=ExtResource("29_6gtrk")]
 position = Vector2(487, 304)
@@ -1134,6 +1136,11 @@ cleared_text = "Proceed to Level 3"
 [node name="Gold" parent="Pickups" unique_id=897547228 instance=ExtResource("31_3x20h")]
 position = Vector2(200, -125)
 
+[node name="Gold10" parent="Pickups" unique_id=1227417337 instance=ExtResource("31_3x20h")]
+position = Vector2(-576, 160)
+scale = Vector2(0.48, 0.48)
+spawn_interval = 25.0
+
 [node name="Tree" parent="Pickups" unique_id=624807137 instance=ExtResource("32_riw3w")]
 position = Vector2(525, -199)
 spawn_interval = 13.0
@@ -1150,6 +1157,10 @@ spawn_interval = 23.225
 position = Vector2(56, 576)
 spawn_interval = 25.0
 
+[node name="Gold11" parent="Pickups" unique_id=947356312 instance=ExtResource("31_3x20h")]
+position = Vector2(820, 741)
+spawn_interval = 25.0
+
 [node name="Tree2" parent="Pickups" unique_id=1272959136 instance=ExtResource("32_riw3w")]
 position = Vector2(768, -63)
 spawn_interval = 16.0
@@ -1160,30 +1171,37 @@ spawn_interval = 16.0
 
 [node name="Wood" parent="Pickups" unique_id=1363000235 instance=ExtResource("34_htd01")]
 position = Vector2(-132.00002, 97.000015)
+wood_amount = 2
 
 [node name="Wood2" parent="Pickups" unique_id=136647079 instance=ExtResource("34_htd01")]
 position = Vector2(493.00006, -92.00003)
+wood_amount = 2
 
 [node name="Wood3" parent="Pickups" unique_id=1970950679 instance=ExtResource("34_htd01")]
 position = Vector2(1595, 380.00006)
+wood_amount = 2
 
 [node name="Gold4" parent="Pickups" unique_id=947607131 instance=ExtResource("35_0luim")]
 position = Vector2(35.000004, 215.00003)
 
 [node name="Gold5" parent="Pickups" unique_id=1117900592 instance=ExtResource("35_0luim")]
 position = Vector2(-323.00003, 91.99997)
+gold_amount = 2
 
 [node name="Gold6" parent="Pickups" unique_id=530971250 instance=ExtResource("35_0luim")]
 position = Vector2(304.00003, 551.99994)
+gold_amount = 2
 
 [node name="Gold9" parent="Pickups" unique_id=619929922 instance=ExtResource("35_0luim")]
 position = Vector2(1820.0001, 687)
+gold_amount = 2
 
 [node name="Gold8" parent="Pickups" unique_id=895623770 instance=ExtResource("35_0luim")]
 position = Vector2(284, 668)
 
 [node name="Gold7" parent="Pickups" unique_id=1636263262 instance=ExtResource("35_0luim")]
 position = Vector2(35.999985, -220)
+gold_amount = 2
 
 [node name="FakeBuildings" type="Area2D" parent="." unique_id=1618615458]
 
@@ -1205,6 +1223,7 @@ position = Vector2(1557, 643)
 texture = ExtResource("37_htd01")
 
 [node name="SlimeSpawner" parent="." unique_id=1476491033 instance=ExtResource("37_83mqd")]
+visible = false
 position = Vector2(855, 290)
 
 [node name="StarterMinions" type="Area2D" parent="." unique_id=768217931]
@@ -1213,10 +1232,38 @@ position = Vector2(855, 290)
 position = Vector2(-380, 144)
 possible_names = Array[String](["Darrelt", "WidowWaker", "Karrelt", "Parrelt", "Tarrelt", "Varrelt", "Warrelt", "Zarrelt", "Farrelt", "Garrelt", "Larvalt", "Jarvalt", "Harvalt", "Barvalt", "Tharrelt", "Warrelt", "Sir Waltrus the 4th", "Sir Wallelt the 5th", "Charrelt", "Darrelt", "Merrelt", "Sarrelt", "Rarrelius", "Barrelius", "Harrelius", "Gerrelius", "Wherrelius", "Sir Waltimus the 6th", "Sir Waldus the 7th", "Sir Warlert the 8th", "Tiberrelt", "Grarrelt", "Flarrelt", "Quarrelt", "Vorrelt", "Sorrelt", "Jarrelius", "Tharrelius", "Chorrelt", "Warrelius", "Marrelius", "Sir Walthazar the 9th", "Sir Waltherelt the 10th", "Rarrelt", "Barrelt", "Larrelt", "Jarrelt", "Wherelt", "Therrelt", "Harrelt", "Chairelt", "Gerrelt", "Dr.Walter"])
 
+[node name="Archer2" parent="StarterMinions" unique_id=399319807 instance=ExtResource("38_podw2")]
+position = Vector2(222, -401)
+collision_layer = 0
+collision_mask = 0
+move_speed = 0.0
+attack_range = 290.0
+attack_cooldown = 1.3
+strength = 3
+possible_names = Array[String](["Darrelt", "WidowWaker", "Karrelt", "Parrelt", "Tarrelt", "Varrelt", "Warrelt", "Zarrelt", "Farrelt", "Garrelt", "Larvalt", "Jarvalt", "Harvalt", "Barvalt", "Tharrelt", "Warrelt", "Sir Waltrus the 4th", "Sir Wallelt the 5th", "Charrelt", "Darrelt", "Merrelt", "Sarrelt", "Rarrelius", "Barrelius", "Harrelius", "Gerrelius", "Wherrelius", "Sir Waltimus the 6th", "Sir Waldus the 7th", "Sir Warlert the 8th", "Tiberrelt", "Grarrelt", "Flarrelt", "Quarrelt", "Vorrelt", "Sorrelt", "Jarrelius", "Tharrelius", "Chorrelt", "Warrelius", "Marrelius", "Sir Walthazar the 9th", "Sir Waltherelt the 10th", "Rarrelt", "Barrelt", "Larrelt", "Jarrelt", "Wherelt", "Therrelt", "Harrelt", "Chairelt", "Gerrelt", "Dr.Walter"])
+
 [node name="Minion_1" parent="StarterMinions" unique_id=1130876174 instance=ExtResource("27_61trp")]
 position = Vector2(-262, 139)
 possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}", "Waltus", "Flongus", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus"])
 
-[node name="Minion_2" parent="StarterMinions" unique_id=985332274 instance=ExtResource("27_61trp")]
-position = Vector2(-312, 165)
+[node name="Minion_3" parent="StarterMinions" unique_id=550636731 instance=ExtResource("27_61trp")]
+position = Vector2(-316, 165)
 possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}", "Waltus", "Flongus", "Dongus", "Crongus", "Le Chonkus", "Ur Rightus", "Mai Anus"])
+
+[node name="Protection" parent="StarterMinions" unique_id=985332274 instance=ExtResource("27_61trp")]
+position = Vector2(-182, 108)
+scale = Vector2(0.42, 0.42)
+move_speed = 0.0
+attack_cooldown = 1.2
+strength = 3
+max_health = 1000000
+possible_names = Array[String](["Guard"])
+
+[node name="Protection2" parent="StarterMinions" unique_id=96787931 instance=ExtResource("27_61trp")]
+position = Vector2(-122.000015, 175)
+scale = Vector2(0.42, 0.42)
+move_speed = 0.0
+attack_cooldown = 1.2
+strength = 3
+max_health = 1000000
+possible_names = Array[String](["Guard"])

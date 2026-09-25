@@ -10,6 +10,9 @@ extends CharacterBody2D
 @export var attack_rate: float = 1
 @export var aggo_range: float = 100
 @export var attack_range: float = 40
+@export var damage_frame: int = 3
+
+@export var contact_knockback_force: float = 360.0
 
 var knockback_velocity: Vector2 = Vector2.ZERO
 var is_knocked_back: bool = false
@@ -17,14 +20,17 @@ var is_knocked_back: bool = false
 @onready var detection_area: Area2D = $Detection
 @onready var attack_timer: Timer = $Timer
 @onready var health_bar: ProgressBar = $ProgressBar
+@onready var death: AudioStreamPlayer2D = $Die
 
 var player: Node2D = null
 var current_health: int
 var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null
+var attack_target: Node2D = null
 var facing: String = "down"
 var can_attack: bool = true
 var is_attacking: bool = false
+var damage_dealt_this_attack: bool = false
 var is_dead: bool = false
 
 func _ready() -> void:
@@ -44,6 +50,8 @@ func _ready() -> void:
 	attack_timer.one_shot = true
 	attack_timer.timeout.connect(_on_attack_timer_timeout)
 
+	anim.frame_changed.connect(_on_frame_changed)
+
 
 func _physics_process(_delta: float) -> void:
 	if is_knocked_back:
@@ -53,10 +61,8 @@ func _physics_process(_delta: float) -> void:
 			is_knocked_back = false
 		move_and_slide()
 		return
-		
+
 	_update_target()
-	move_and_slide()
-	
 
 	if is_attacking:
 		velocity = Vector2.ZERO
@@ -100,16 +106,27 @@ func _try_attack() -> void:
 		return
 	can_attack = false
 	is_attacking = true
+	damage_dealt_this_attack = false
+	attack_target = current_target
 	_play_attack_animation()
 	attack_timer.start()
 
-	if current_target.has_method("take_damage"):
-		current_target.take_damage(strength)
+
+func _on_frame_changed() -> void:
+	if not is_attacking or damage_dealt_this_attack:
+		return
+	if anim.frame != damage_frame:
+		return
+
+	damage_dealt_this_attack = true
+	if is_instance_valid(attack_target) and attack_target.has_method("take_damage"):
+		attack_target.take_damage(strength)
 
 
 func _on_attack_timer_timeout() -> void:
 	can_attack = true
 	is_attacking = false
+	attack_target = null
 
 
 func _face_direction(direction: Vector2) -> void:
@@ -175,7 +192,12 @@ func _update_health_bar() -> void:
 	if health_bar:
 		health_bar.max_value = health
 		health_bar.value = current_health
-		
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and body.has_method("apply_knockback"):
+		var direction: Vector2 = (body.global_position - global_position).normalized()
+		body.apply_knockback(direction, contact_knockback_force)
+
 func apply_knockback(direction: Vector2, force: float) -> void:
 	is_knocked_back = true
 	knockback_velocity = direction.normalized() * force
@@ -185,6 +207,7 @@ func _death() -> void:
 	detection_area.monitoring = false
 	detection_area.monitorable = false
 	$Hurtbox.set_deferred("disabled",true)
+	death.play()
 
 	var pickup_scene: PackedScene
 	if randf() < 0.6:
@@ -202,4 +225,3 @@ func _death() -> void:
 	anim.play("die")
 	await anim.animation_finished
 	queue_free()
-	

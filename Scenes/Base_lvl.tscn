@@ -863,11 +863,9 @@ position = Vector2(2277, 295)
 
 [node name="SlimeSpawner" parent="Opps" unique_id=1476491033 instance=ExtResource("23_m4uks")]
 position = Vector2(292, 555)
-max_total_spawns = 2
 
 [node name="SlimeSpawner2" parent="Opps" unique_id=262225891 instance=ExtResource("23_m4uks")]
 position = Vector2(295, 226)
-max_total_spawns = 2
 
 [node name="Pickups" type="Area2D" parent="." unique_id=227102525]
 
@@ -915,7 +913,6 @@ position = Vector2(676.99994, 102)
 possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
 
 [node name="Minion_2" parent="Minions" unique_id=375235389 instance=ExtResource("20_7amti")]
-visible = false
 position = Vector2(-386, 335)
 possible_names = Array[String](["Bingus", "lingus", "Pingus", "Bongus", "Wongus", "Hongus", "Slongus", "Jongus", "Pongus", "Name Pending", "Youngus", "Glongus", "Tung-Tungus", "Amongus", "Rongus", "Wongus", "Meat Longus", "So Wrongus", "{__}"])
 

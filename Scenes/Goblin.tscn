@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bibbsig07s5pb" path="res://Scenes/Resoures/Gold_Drop.tscn" id="2_gjpl2"]
 [ext_resource type="PackedScene" uid="uid://t3pvrrc0361e" path="res://Scenes/Resoures/Wood_Drop.tscn" id="3_02kj1"]
 [ext_resource type="Texture2D" uid="uid://bhqmmfdjp64s7" path="res://Tiny Swords (Free Pack)/Factions/Knights/Troops/Dead/Dead.png" id="3_128dr"]
+[ext_resource type="AudioStream" uid="uid://dobceycmx8jxp" path="res://Imported from other/Assets/Sounds/splat_quick.wav" id="6_b0stx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83w5t"]
 atlas = ExtResource("1_564fj")
@@ -358,12 +359,11 @@ animations = [{
 radius = 1149.8184
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_128dr"]
-radius = 24.083189
+radius = 19.027311
 
 [node name="Enemy" type="CharacterBody2D" unique_id=459387554 groups=["enemy"]]
 scale = Vector2(0.555, 0.555)
-collision_layer = 12
-collision_mask = 7
+collision_layer = 13
 script = ExtResource("1_wqigr")
 gold_pickup_scene = ExtResource("2_gjpl2")
 wood_pickup_scene = ExtResource("3_02kj1")
@@ -374,7 +374,7 @@ aggo_range = 250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1439150386]
 sprite_frames = SubResource("SpriteFrames_xxja1")
-animation = &"Idle"
+animation = &"Attack_Up"
 autoplay = "Idle"
 
 [node name="Detection" type="Area2D" parent="." unique_id=757817563 groups=["enemy"]]
@@ -397,8 +397,12 @@ offset_bottom = -66.0
 show_percentage = false
 
 [node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=1629020694]
-position = Vector2(-1, 6)
+position = Vector2(-0.9999999, 15.00901)
 shape = SubResource("CircleShape2D_128dr")
+
+[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=684154186]
+stream = ExtResource("6_b0stx")
+volume_db = -9.72
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

@@ -1,8 +1,67 @@
 [gd_scene format=3 uid="uid://b3igpyjhd7npu"]
 
 [ext_resource type="PackedScene" uid="uid://bkqixod10yhv4" path="res://Scenes/UI.tscn" id="1_va5en"]
+[ext_resource type="Texture2D" uid="uid://cye1cov27tscs" path="res://pngtree-keyboard-keys-vector-png-image_6705739.png" id="2_7xmun"]
+[ext_resource type="Texture2D" uid="uid://ck0dpglkeqeu8" path="res://arrows_1782520.png" id="3_b8uco"]
+[ext_resource type="Texture2D" uid="uid://cw1rkwmakuw4j" path="res://mouse-left-click-icons-png-21.png" id="4_5tded"]
+[ext_resource type="Texture2D" uid="uid://5alsesrm41ra" path="res://5308833-200.png" id="5_mpoao"]
+[ext_resource type="FontFile" uid="uid://c7shcc80vegyq" path="res://Imported from other/Fonts/Minecraftia-Regular.ttf" id="6_wcm6r"]
 
 [node name="Node2D" unique_id=1111563238 instance=ExtResource("1_va5en")]
 
 [node name="Store" parent="." index="1" unique_id=1672596618]
 visible = false
+
+[node name="PngtreeKeyboardKeysVectorPngImage6705739" type="Sprite2D" parent="." index="2" unique_id=1550552779]
+position = Vector2(82, 586)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("2_7xmun")
+
+[node name="Arrows1782520" type="Sprite2D" parent="." index="3" unique_id=88895843]
+position = Vector2(217.99995, 585.99994)
+scale = Vector2(0.23925781, 0.23925781)
+texture = ExtResource("3_b8uco")
+
+[node name="MouseLeftClickIconsPng21" type="Sprite2D" parent="." index="4" unique_id=579718440]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(74.999985, 471.99994)
+scale = Vector2(0.11328131, 0.11328131)
+texture = ExtResource("4_5tded")
+
+[node name="5308833200" type="Sprite2D" parent="." index="5" unique_id=1591726153]
+position = Vector2(143.00003, 477)
+scale = Vector2(0.30249992, 0.30249992)
+texture = ExtResource("5_mpoao")
+
+[node name="Controls" type="Label" parent="." index="6" unique_id=1365547396]
+offset_left = 298.0
+offset_top = 587.0
+offset_right = 430.0
+offset_bottom = 672.0
+theme_override_fonts/font = ExtResource("6_wcm6r")
+theme_override_font_sizes/font_size = 23
+text = "Movement
+"
+
+[node name="Controls2" type="Label" parent="." index="7" unique_id=42674244]
+offset_left = 194.0
+offset_top = 460.0
+offset_right = 326.0
+offset_bottom = 545.0
+theme_override_fonts/font = ExtResource("6_wcm6r")
+theme_override_font_sizes/font_size = 23
+text = "Attack
+"
+horizontal_alignment = 1
+
+[node name="Controls3" type="Label" parent="." index="8" unique_id=986736198]
+offset_left = 192.0
+offset_top = 451.0
+offset_right = 324.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0.91764706, 0.050980393, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("6_wcm6r")
+theme_override_font_sizes/font_size = 10
+text = "Pacifist
+"
+horizontal_alignment = 1

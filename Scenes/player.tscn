@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://be8qbmt0fe144"]
 
 [ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://djrnkoif3bkg7" path="res://Scenes/Game_Lose.tscn" id="2_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://b11r2w6pq5bd5" path="res://Imported from other/Assets/Player/Player.png" id="2_kyqiw"]
+[ext_resource type="AudioStream" uid="uid://dlkgv18wybagf" path="res://Imported from other/Assets/Sounds/punch.wav" id="3_dewec"]
+[ext_resource type="AudioStream" uid="uid://wx6u8mld1i5w" path="res://Imported from other/Assets/Sounds/foley_footstep_carpet_2.wav" id="4_5ixxa"]
+[ext_resource type="AudioStream" uid="uid://8wsv6g3pjdel" path="res://Imported from other/Assets/Sounds/coin_jingle_small.wav" id="5_5ixxa"]
+[ext_resource type="AudioStream" uid="uid://vbmm4img5yw0" path="res://Imported from other/Assets/Sounds/wood_small_pickup.wav" id="6_nn08x"]
+[ext_resource type="Script" uid="uid://bpur3i3c2exdp" path="res://Scripts/Health and Darken.gd" id="7_52ee3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
 atlas = ExtResource("2_kyqiw")
@@ -420,8 +426,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kyqiw"]
-radius = 4.024145
+[sub_resource type="CircleShape2D" id="CircleShape2D_52ee3"]
+radius = 4.4448133
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(11.214952, 19.345795)
@@ -434,6 +440,7 @@ platform_floor_layers = 4294967040
 script = ExtResource("1_kyqiw")
 move_speed = 140.0
 knockback_frame = 2
+game_over_scene = ExtResource("2_bhhdu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2076871985]
 texture_filter = 1
@@ -441,13 +448,60 @@ sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"Attack_Down"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=1957909413]
-position = Vector2(-0.804829, 2.414487)
-shape = SubResource("CircleShape2D_kyqiw")
+position = Vector2(-0.8048289, 4.828974)
+shape = SubResource("CircleShape2D_52ee3")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1261736886]
+collision_layer = 3
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2135630279]
 position = Vector2(13.084114, 0.32710278)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=425439550]
+
+[node name="Swing" type="AudioStreamPlayer2D" parent="." unique_id=1302962349]
+stream = ExtResource("3_dewec")
+volume_db = -10.046
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="." unique_id=1363541632]
+stream = ExtResource("4_5ixxa")
+max_distance = 1575.0
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="." unique_id=434367466]
+
+[node name="PickGold" type="AudioStreamPlayer2D" parent="." unique_id=1230569295]
+stream = ExtResource("5_5ixxa")
+volume_db = -8.0
+
+[node name="PickWood" type="AudioStreamPlayer2D" parent="." unique_id=660100295]
+stream = ExtResource("6_nn08x")
+volume_db = -8.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1119767322]
+script = ExtResource("7_52ee3")
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=925937749]
+modulate = Color(1.0055778, 0.31749243, 0.41015786, 1)
+offset_left = 43.0
+offset_top = 20.0
+offset_right = 215.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 14
+
+[node name="Darken" type="ColorRect" parent="CanvasLayer/HealthBar" unique_id=1548930841]
+layout_mode = 0
+offset_left = -231.38834
+offset_top = -123.772644
+offset_right = 1292.0
+offset_bottom = 739.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1394513604]
+offset_left = 75.0
+offset_top = -2.0
+offset_right = 179.0
+offset_bottom = 21.0
+text = "Health"
+horizontal_alignment = 1

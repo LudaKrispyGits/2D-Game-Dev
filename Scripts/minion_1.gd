@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var max_health: int = 10
 @export var damage_frame: int = 4
 
+@onready var death: AudioStreamPlayer2D = $Die
+
 @onready var sword: AudioStreamPlayer2D = $Sound
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $Detection
@@ -28,7 +30,7 @@ var damage_dealt_this_attack: bool = false
 var is_dead: bool = false
 @export var possible_names: Array[String] = [
 	"Bingus", "lingus", "Pingus", "Bongus", "Wongus",
-	"Hongus", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus"
+	"Embaa", "Slongus", "Jongus", "Pongus", "Joey", "Name Pending", "Youngus", "Glongus", "Tung-Tongus", "Amongus", "Rongus"
 	, "Wongus" , "Meat Longus", "So Wrongus", "Evil Joey", "{__}", "Waltus","Flongus","Dongus","Crongus","Le Chonkus","Ur Rightus","Mai Anus"
 	,"NoGuerius"
 ]
@@ -46,6 +48,7 @@ func _ready() -> void:
 		move_speed = 60
 		scale *= 1.6
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
+		
 
 	elif minion_name == "Evil Joey":
 		strength = 100
@@ -66,6 +69,12 @@ func _ready() -> void:
 		max_health = 15
 		move_speed = 120
 		attack_cooldown = 3
+		name_label.add_theme_color_override("font_color", Color.YELLOW)
+	elif minion_name == "Embaa":
+		strength = 5
+		max_health = 15
+		move_speed = 120
+		attack_cooldown = .5
 		name_label.add_theme_color_override("font_color", Color.YELLOW)
 
 
@@ -257,6 +266,7 @@ func _death() -> void:
 	set_physics_process(false)
 	detection_area.monitoring = false
 	anim.play("die")
+	death.play()
 	await anim.animation_finished
 	queue_free()
 

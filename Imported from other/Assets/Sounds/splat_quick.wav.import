@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dobceycmx8jxp"
+path="res://.godot/imported/splat_quick.wav-4834680acc9fd5b8f7e23bb14f305716.sample"
+
+[deps]
+
+source_file="res://Imported from other/Assets/Sounds/splat_quick.wav"
+dest_files=["res://.godot/imported/splat_quick.wav-4834680acc9fd5b8f7e23bb14f305716.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

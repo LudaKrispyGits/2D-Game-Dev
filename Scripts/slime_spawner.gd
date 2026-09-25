@@ -9,6 +9,8 @@ extends Node2D
 @export var max_alive: int = 1
 @export var max_total_spawns: int = 3
 
+@onready var splashsound: AudioStreamPlayer2D = $Splash
+
 @onready var spawn_timer: Timer = $Timer
 
 var active_spawns: Array[Node2D] = []
@@ -49,6 +51,7 @@ func _on_spawn_timer_timeout() -> void:
 
 	var slime = slime_scene.instantiate()
 	get_parent().add_child(slime)
+	splashsound.play()
 	slime.global_position = spawn_position
 	slime.scale = Vector2.ZERO
 	active_spawns.append(slime)

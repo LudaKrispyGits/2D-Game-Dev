@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c84og0o64t1ni" path="res://Scripts/slime_spawner.gd" id="1_8p237"]
 [ext_resource type="PackedScene" uid="uid://mbhogf8fg6pv" path="res://Scenes/WaterSlime.tscn" id="2_ityl0"]
 [ext_resource type="PackedScene" uid="uid://ns660e6c0asv" path="res://Scenes/splash.tscn" id="3_ityl0"]
+[ext_resource type="AudioStream" uid="uid://bwxnqy7mx1koe" path="res://Imported from other/Assets/Sounds/water_drop_synthetic.wav" id="4_mwc3s"]
 
 [node name="SlimeSpawner" type="Node2D" unique_id=1476491033]
 script = ExtResource("1_8p237")
@@ -10,3 +11,7 @@ slime_scene = ExtResource("2_ityl0")
 splash_scene = ExtResource("3_ityl0")
 
 [node name="Timer" type="Timer" parent="." unique_id=24450501]
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="." unique_id=1014262493]
+stream = ExtResource("4_mwc3s")
+volume_db = -8.748
